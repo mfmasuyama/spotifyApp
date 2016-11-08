@@ -53,12 +53,13 @@ body {
 .favouriteSong .data {
     width: 75%;
     float: left;
+    line-height: 5px;
 }
 
 .favouriteSong .image img {
     width: 75px;
     height: 75px;
-    margin: 5px;
+    margin: 10px;
 }
 
 input.search {
