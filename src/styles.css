@@ -1,5 +1,76 @@
-.consigna__container {
-  width: 50%;
+body {
+    font-family: Arial, sans-serif;
+    background-color: orange;
+}
+
+.container {
+  width: 80%;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: 18%;
+  background-color: yellow;
+  border: 1px solid black;
+}
+
+.inside-container {
+    width: 70%;
+    background-color: magenta;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+}
+
+.logo-center {
+    width: 100%;
+    background-color: cyan;
+    border-bottom: 1px solid black;
+}
+
+.logo-center img {
+    height: 40px;
+    width: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row-favouriteSongs, .row {
+    width: 100%;
+}
+
+.favouriteSong {
+    width: 50%;
+    background-color: green;
+    float: left;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.favouriteSong .image {
+    width: 25%;
+    float: left;
+}
+
+.favouriteSong .data {
+    width: 75%;
+    float: left;
+}
+
+.favouriteSong .image img {
+    width: 75px;
+    height: 75px;
+    margin: 5px;
+}
+
+input.search {
+    background: white url("http://www.myiconfinder.com/uploads/iconsets/20-20-d83cd937aec2e189c7c64761ab72829d-search.png") left no-repeat;
+    text-indent: 30px;
+    border-radius: 8px;
+    width: 99.4%;
+    line-height: 25px;
+}
+
+footer {
+    width: 100%;
+    background-color: red;
+    border-top: 1px solid black;
 }
