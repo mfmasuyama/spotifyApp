@@ -3,6 +3,11 @@ body {
     background-color: orange;
 }
 
+.title {
+    font-size: 35px;
+    font-weight: bold;
+}
+
 .container {
   width: 100%;
   margin-left: auto;
@@ -19,6 +24,11 @@ body {
     overflow: auto;
 }
 
+.row {
+    width: 100%;
+}
+
+/* Nav */
 .logo-center {
     width: 100%;
     background-color: cyan;
@@ -32,11 +42,9 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+/*--------*/
 
-.row-favouriteSongs, .row {
-    width: 100%;
-}
-
+/* Favourite Song */
 .favouriteSong {
     width: 50%;
     background-color: green;
@@ -61,14 +69,28 @@ body {
     height: 75px;
     margin: 10px;
 }
+/*--------*/
 
-input.search {
-    background: white url("http://www.myiconfinder.com/uploads/iconsets/20-20-d83cd937aec2e189c7c64761ab72829d-search.png") left no-repeat;
+/* Search */
+input.search-input {
+    height:20px;
     text-indent: 30px;
     border-radius: 8px;
     width: 99.4%;
     line-height: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
+
+#search-icon {
+    position: relative;;
+    left: 10px;
+    width: 10px;
+    height: 10px;
+    bottom: 42px;
+}
+/*--------*/
+
 
 footer {
     width: 100%;
