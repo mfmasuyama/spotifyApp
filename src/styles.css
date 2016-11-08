@@ -44,8 +44,8 @@ body {
 }
 /*--------*/
 
-/* Favourite Song */
-.favouriteSong {
+/* Favourite Song - Artist*/
+div[class^="item"] {
     width: 50%;
     background-color: green;
     float: left;
@@ -53,18 +53,18 @@ body {
     box-sizing: border-box;
 }
 
-.favouriteSong .image {
+div[class^="item"] .image {
     width: 25%;
     float: left;
 }
 
-.favouriteSong .data {
+div[class^="item"] .data{
     width: 75%;
     float: left;
     line-height: 5px;
 }
 
-.favouriteSong .image img {
+div[class^="item"] .image img {
     width: 75px;
     height: 75px;
     margin: 10px;
