@@ -156,6 +156,8 @@ table {
 	padding: 5px;
     text-indent: 10px;
     vertical-align: middle;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 thead {
@@ -184,5 +186,16 @@ td img {
     width: 20px;
     height: 20px;
     vertical-align: middle;
+}
+/*--------*/
+
+/* Responsive */
+@media only screen and (max-width: 425px) {
+    .inside-container {
+        width: 98%;
+    }
+    [class^="item"] {
+        width: 100% !important;
+    }
 }
 /*--------*/
