@@ -37,6 +37,7 @@ img[class^="logo"] {
     height: 40px;
     width: 40px;
     margin: 20px;
+    vertical-align: middle;
 }
 /*--------*/
 
@@ -70,7 +71,7 @@ img.logo-left {
 
 /* Items: Favourite Song - Artist*/
 div[class^="item"] {
-    width: 49%;
+    width: 48%;
     background-color: green;
     border: 1px solid black;
     box-sizing: border-box;
@@ -79,10 +80,12 @@ div[class^="item"] {
 
 div[class^="item"]:nth-child(even) {
     float: left;
+    margin-right: 10px;
 }
 
 div[class^="item"]:nth-child(odd) {
     float: right;
+    margin-left: 10px;
 }
 
 div[class^="item"] .image {
@@ -100,6 +103,7 @@ div[class^="item"] .image img {
     width: 75px;
     height: 75px;
     margin: 10px;
+    vertical-align: middle;
 }
 /*--------*/
 
