@@ -92,7 +92,7 @@ input.search-input {
 /*--------*/
 
 
-footer {
+.footer {
     width: 100%;
     background-color: red;
     border-top: 1px solid black;
