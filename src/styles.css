@@ -3,11 +3,6 @@ body {
     background-color: orange;
 }
 
-.title {
-    font-size: 35px;
-    font-weight: bold;
-}
-
 .container {
   width: 100%;
   margin-left: auto;
@@ -29,22 +24,51 @@ body {
 }
 
 /* Nav */
-.logo-center {
+.nav {
     width: 100%;
     background-color: cyan;
     border-bottom: 1px solid black;
+    overflow:hidden;
 }
+/*---------*/
 
-.logo-center img {
+/* Logo */
+img[class^="logo"] {
     height: 40px;
     width: 40px;
+    margin: 20px;
+}
+/*--------*/
+
+/* Nav with logo-center*/
+img.logo-center  {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 /*--------*/
 
-/* Favourite Song - Artist*/
+/* Nav with logo-left */
+img.logo-left {
+    float: left;
+}
+/*--------*/
+
+/* Title*/
+.title {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.img-title {
+    float: left;
+    margin: 20px;
+    width: 120px;
+    height: 120px;
+}
+/*--------*/
+
+/* Items: Favourite Song - Artist*/
 div[class^="item"] {
     width: 50%;
     background-color: green;
@@ -72,7 +96,7 @@ div[class^="item"] .image img {
 /*--------*/
 
 /* Search */
-input.search-input {
+.search-input {
     height:20px;
     text-indent: 30px;
     border-radius: 8px;
@@ -91,9 +115,22 @@ input.search-input {
 }
 /*--------*/
 
+/* Search in column*/
+.column-search {
+    width: 40%;
+    float: right;
+    margin-right: 10px;
+}
+/*--------*/
 
 .footer {
     width: 100%;
     background-color: red;
     border-top: 1px solid black;
 }
+
+/* Links */
+.links {
+    clear: both;
+}
+/*--------*/
