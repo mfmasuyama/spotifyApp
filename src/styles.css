@@ -70,11 +70,19 @@ img.logo-left {
 
 /* Items: Favourite Song - Artist*/
 div[class^="item"] {
-    width: 50%;
+    width: 49%;
     background-color: green;
-    float: left;
     border: 1px solid black;
     box-sizing: border-box;
+    margin-top: 20px;
+}
+
+div[class^="item"]:nth-child(even) {
+    float: left;
+}
+
+div[class^="item"]:nth-child(odd) {
+    float: right;
 }
 
 div[class^="item"] .image {
@@ -132,5 +140,45 @@ div[class^="item"] .image img {
 /* Links */
 .links {
     clear: both;
+}
+/*--------*/
+
+/* Table */
+table {
+	table-layout: auto;
+	background-image: url("http://2.bp.blogspot.com/-2wDuT8Iu08E/T_zeoJ0_aBI/AAAAAAAAKyg/w87GKtcYgg4/s1600/Neon+pink+hot+chevron+background+paper+pattern.jpg");
+	border: 2px solid rgb(108, 57, 137);
+	width: 100%;
+	padding: 5px;
+    text-indent: 10px;
+    vertical-align: middle;
+}
+
+thead {
+	background-color: rgb(167, 66, 244);
+    text-align: left;
+}
+
+tr {
+    width: 100%;
+    line-height: 30px;
+}
+
+tr td {
+	background-color: rgba(193, 160, 219,0.9);
+
+}
+
+tr td:nth-child(2) {
+	background-color: rgba(246, 252, 85,0.9);
+    width: 5%;
+    text-align: center;
+    text-indent: 0px;
+}
+
+td img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
 }
 /*--------*/
