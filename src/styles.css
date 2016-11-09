@@ -71,21 +71,21 @@ img.logo-left {
 
 /* Items: Favourite Song - Artist*/
 div[class^="item"] {
-    width: 48%;
+    width: 49%;
     background-color: green;
     border: 1px solid black;
     box-sizing: border-box;
-    margin-top: 20px;
+    margin-top: 2%;
 }
 
 div[class^="item"]:nth-child(even) {
     float: left;
-    margin-right: 10px;
+    margin-right: 1%;
 }
 
 div[class^="item"]:nth-child(odd) {
     float: right;
-    margin-left: 10px;
+    margin-left: 1%;
 }
 
 div[class^="item"] .image {
