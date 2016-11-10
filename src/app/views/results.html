@@ -15,9 +15,9 @@
             <p class="links">HOME > ARTISTS</p>
         </div>
         <div class="row">
-            <div class="item-artist" ng-repeat="item in myCtrl.artists" ng-show="item.artists.name === resultsCtrl.artist">
-                <!--<img src={{item.artists.image}} alt="">-->
-                <p class="artist">{{item.artists.name}}</p>
+            <div class="item-artist" ng-repeat="item in resultsCtrl.artists" >
+                <img src={{item.images[0].url}} alt="">
+                <p class="artist">{{item.name}}</p>
             </div>
         </div>
     </div>
