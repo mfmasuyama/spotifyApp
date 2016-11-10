@@ -1,31 +1,23 @@
-<div>
+<div ng-controller="resultsCtrl">
     <nav class="nav">
         <img src="https://lh3.googleusercontent.com/UrY7BAZ-XfXGpfkeWg0zCCeo-7ras4DCoRalC_WXXWTK9q5b0Iw7B0YQMsVxZaNB7DM=w300" alt="" class="logo-center">
     </nav>
     <div class="inside-container">
         <div class="row">
             <h1 class="title">Artists</h1>
-            <p>You are currently searching: {{name}} </p>
+            <p>You are currently searching: {{resultsCtrl.artist}}</p>
         </div>
         <div class="row">
-            <input type="text" class="search-input" placeholder="Type the name of your favourite artist" ng-model="name">
-            <img src="http://www.freeiconspng.com/uploads/search-icon-png-17.png" id="search-icon">
+            <input type="text" class="search-input" placeholder="Type the name of your favourite artist" ng-model="resultsCtrl.artist">
+            <img src="http://www.freeiconspng.com/uploads/search-icon-png-17.png" id="search-icon" ng-click="resultsCtrl.getArtists()">
         </div>
         <div class="row">
             <p class="links">HOME > ARTISTS</p>
         </div>
         <div class="row">
-            <div class="item-artist">
-                <img src="https://i.scdn.co/image/66302ca80395b6be3600d5f0ef69db9e0c43f4f5" alt="">
-                <p class="artist">fdsfs1</p>
-            </div>
-            <div class="item-artist">
-                <img src="https://i.scdn.co/image/e2b11f82ba8d5aecc6486fe28225db43a003caa1" alt="">
-                <p class="artist">sdfdsf2</p>
-            </div>
-            <div class="item-artist">
-                <img src="https://i.scdn.co/image/e2b11f82ba8d5aecc6486fe28225db43a003caa1" alt="">
-                <p class="artist">sdfdsf3</p>
+            <div class="item-artist" ng-repeat="item in myCtrl.artists" ng-show="item.artists.name === resultsCtrl.artist">
+                <!--<img src={{item.artists.image}} alt="">-->
+                <p class="artist">{{item.artists.name}}</p>
             </div>
         </div>
     </div>

@@ -2,29 +2,27 @@ import {routes} from "./routes";
 import {ApiService} from "./services";
 
 angular
-    .module("App", ["ngRoute"])
-    .config(routes)
-    .service("ApiService", ApiService)
+.module("App", ["ngRoute"])
+.config(routes)
+.service("ApiService", ApiService)
 
 /* FIX */
-    .controller('myCtrl', ['$scope', '$http', function($scope, $http, ApiService) {
-        $scope.myCtrl = this;
-        console.log($scope);
-    }])
-    .service('spotiApi', ['$http', function($http) {
+.controller('resultsCtrl', ['$scope', '$http', "ApiService", function($scope, $http, ApiService) {
+    $scope.resultsCtrl = this;
 
-    this.getFavourites = function() {
-      return $http({
-        method: 'GET',
-        url: 'https://api.themoviedb.org/3/genre/movie/list?language=en-US&api_key=579989834308dc1b0309510990ad9246'
-      }).then(function(response) {
-          return response.data.genres;
-      }, function () {
-        console.error('La llamada fallo');
-      })
-    }
-
+    ApiService.getArtists().then(function(artists) {
+        this.artists = artists;
+    }.bind(this));
+}])
+.service('ApiService', ['$http', function($http) {
     this.getArtists = function() {
-
+        return $http({
+            method: 'GET',
+            url: "https://api.spotify.com/v1/search?q=" + this.artist + "&type=artist"
+        }).then(function(response) {
+            return response.data.artists;
+        }, function () {
+            console.error('La llamada fallo');
+        })
     }
 }]);
