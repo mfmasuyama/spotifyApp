@@ -6,6 +6,7 @@ angular
     .config(routes)
     .service("ApiService", ApiService)
 
+/* FIX */
     .controller('myCtrl', ['$scope', '$http', function($scope, $http, ApiService) {
         $scope.myCtrl = this;
         console.log($scope);
