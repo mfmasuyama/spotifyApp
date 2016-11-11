@@ -9,16 +9,18 @@
         </div>
         <div class="row">
             <input type="text" class="search-input" placeholder="Type the name of your favourite artist" ng-model="resultsCtrl.artist">
-            <img src="http://www.freeiconspng.com/uploads/search-icon-png-17.png" id="search-icon" ng-click="resultsCtrl.getArtists()">
+            <a href=""><img src="http://www.freeiconspng.com/uploads/search-icon-png-17.png" id="search-icon" ng-click="resultsCtrl.getArtists()"></a>
         </div>
         <div class="row">
             <p class="links">HOME > ARTISTS</p>
         </div>
         <div class="row">
-            <div class="item-artist" ng-repeat="item in resultsCtrl.artists" >
-                <img src={{item.images[0].url}} alt="">
-                <p class="artist">{{item.name}}</p>
-            </div>
+            <a href="#band-albums" ng-repeat="item in resultsCtrl.artists">
+                <div class="item-artist">
+                    <img src={{item.images[0].url}} alt="">
+                    <p class="artist">{{item.name}}</p>
+                </div>
+            </a>
         </div>
     </div>
     <footer class="footer"></footer>

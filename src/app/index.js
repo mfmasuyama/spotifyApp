@@ -10,7 +10,7 @@ angular
 .controller('resultsCtrl', ['$scope', '$http', "ApiService", function($scope, $http, ApiService) {
     $scope.resultsCtrl = this;
 
-    this.getArtists = function(){
+    this.getArtists = function() {
         ApiService.getArtists($scope.resultsCtrl.artist).then(function(artists) {
             this.artists = artists.items;
             console.log(this.artists);
@@ -18,12 +18,11 @@ angular
     }
 
 }])
-
 .service('ApiService', ['$http', function($http) {
     this.getArtists = function(name) {
         return $http({
             method: 'GET',
-            url: "https://api.spotify.com/v1/search?q=" + name + "&type=artist"
+            url: "https://api.spotify.com/v1/search?q=" + name + "&type=artist&limit=10"
         }).then(function(response) {
             return response.data.artists;
         }, function() {
