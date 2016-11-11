@@ -175,21 +175,21 @@ tr td {
 	background-color: rgba(249, 163, 210, 0.4);
 }
 
-tr td:nth-child(2) {
-    background-image: url("https://cdn3.iconfinder.com/data/icons/inficons-set-2/512/star-ratings-512.png");
+tr td:nth-child(2) { /* FIX */
     width: 5%;
     text-align: center;
     text-indent: 0px;
+    /*background-image: */
 }
 
-td img {
+td img { /* FIX */
     width: 20px;
     height: 20px;
     vertical-align: middle;
 }
 
-tr td:nth-child(2):hover {
-    background: "star-ratings-512yellow.png" no-repeat;
+tr td:nth-child(2):hover { /* FIX */
+
 }
 /*--------*/
 
