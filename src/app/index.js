@@ -6,7 +6,6 @@ angular
 .config(routes)
 .service("ApiService", ApiService)
 
-
 .controller('resultsCtrl', ['$scope', '$http', "ApiService", function($scope, $http, ApiService) {
     $scope.resultsCtrl = this;
 
@@ -27,7 +26,8 @@ angular
             console.error('Error');
         })
     }
-}])
+}]);
+/*
 .service('ApiService', ['$http', function($http) {
     this.getAlbums = function(name) {
         return $http({
@@ -52,3 +52,4 @@ angular
         })
     }
 }]);
+*/
