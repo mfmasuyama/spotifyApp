@@ -1,6 +1,6 @@
 <div ng-controller="resultsCtrl">
     <nav class="nav">
-        <img src="https://lh3.googleusercontent.com/UrY7BAZ-XfXGpfkeWg0zCCeo-7ras4DCoRalC_WXXWTK9q5b0Iw7B0YQMsVxZaNB7DM=w300" alt="" class="logo-center">
+        <img src="/app/images/spotify-icon.png" alt="" class="logo-center">
     </nav>
     <div class="inside-container">
         <div class="row">
@@ -15,7 +15,7 @@
             <p class="links">HOME > ARTISTS</p>
         </div>
         <div class="row">
-            <a href="#band-albums" ng-repeat="item in resultsCtrl.artists">
+            <a href="/band-albums" ng-repeat="item in resultsCtrl.artists">
                 <div class="item-artist">
                     <img src={{item.images[0].url}} alt="">
                     <p class="artist">{{item.name}}</p>
