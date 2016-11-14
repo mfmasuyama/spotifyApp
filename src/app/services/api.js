@@ -10,4 +10,15 @@ export function ApiService($http) {
             console.error('Error');
         });
     }
+
+    this.getAlbums = function(id) {
+        return $http({
+            method: 'GET',
+            url: "https://api.spotify.com/v1/artists/"+id+"/albums"
+        }).then(function success(response) {
+            console.log( response.data);
+        }, function error() {
+            console.error('Error');
+        });
+    }
 }

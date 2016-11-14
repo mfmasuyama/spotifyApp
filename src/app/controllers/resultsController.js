@@ -1,4 +1,4 @@
-export function resultsController($scope, $http, ApiService) {
+export function resultsController($scope, ApiService) {
     $scope.resultsCtrl = this;
 
     this.getArtists = function() {
