@@ -1,6 +1,6 @@
 <div ng-controller="resultsCtrl">
     <nav class="nav">
-        <img src="/app/images/spotify-icon.png" alt="" class="logo-center">
+        <a href="/"><img src="/app/images/spotify-icon.png" alt="" class="logo-center"></a>
     </nav>
     <div class="inside-container">
         <div class="row">
@@ -12,10 +12,10 @@
             <a href=""><i class="fa fa-search" aria-hidden="true" id="search-icon" ng-click="resultsCtrl.getArtists()"></i></a>
         </div>
         <div class="row">
-            <p class="links">HOME > ARTISTS</p>
+            <p class="links"><a href="/">HOME</a> > ARTISTS</p>
         </div>
         <div class="row">
-            <a href="/band-albums" ng-repeat="item in resultsCtrl.artists">
+            <a href="/band-albums" ng-repeat="item in resultsCtrl.artists" ng-click="resultsCtrl.getId()">
                 <div class="item-artist">
                     <img src={{item.images[0].url}} alt="">
                     <p class="artist">{{item.name}}</p>

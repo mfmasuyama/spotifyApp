@@ -1,6 +1,6 @@
 import {routes} from "./routes";
 import {ApiService} from "./services";
-import {resultsController} from "./controller/resultsController";
+import {resultsController} from "./controllers/resultsController";
 
 angular
 .module("App", ["ngRoute"])
