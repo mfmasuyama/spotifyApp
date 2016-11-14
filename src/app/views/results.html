@@ -15,7 +15,7 @@
             <p class="links"><a href="/">HOME</a> > ARTISTS</p>
         </div>
         <div class="row">
-            <a href="/band-albums" ng-repeat="item in resultsCtrl.artists" ng-click="resultsCtrl.getId()">
+            <a href="/band-albums" ng-repeat="item in resultsCtrl.artists">
                 <div class="item-artist">
                     <img src={{item.images[0].url}} alt="">
                     <p class="artist">{{item.name}}</p>
