@@ -16,7 +16,7 @@ export function ApiService($http) {
             method: 'GET',
             url: "https://api.spotify.com/v1/artists/" + id + "/albums"
         }).then(function success(response) {
-            return response.data;
+            return response.data.items;
         }, function error() {
             console.error('Error');
         });
