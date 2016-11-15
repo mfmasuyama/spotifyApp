@@ -2,10 +2,10 @@ export function bandAlbumsController($scope, $routeParams, ApiService) {
     $scope.bandAlbumsCtrl = this;
 
     ApiService.getAlbums($routeParams.bandId)
-        .then((response)=>{
-            this.albums = response;
-            console.log(response);
-        });
+    .then(function(response) {
+        this.albums = response;
+        console.log(response);
+    }.bind(this));
     /*ApiService.getArtist($routeParams.bandId);*/
     // console.log($scope.algo);
 }
