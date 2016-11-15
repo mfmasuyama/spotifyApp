@@ -6,6 +6,12 @@ export function bandAlbumsController($scope, $routeParams, ApiService) {
         this.albums = response;
         console.log(response);
     }.bind(this));
-    /*ApiService.getArtist($routeParams.bandId);*/
-    // console.log($scope.algo);
+
+    ApiService.getArtist($routeParams.bandId)
+    .then(function(response) {
+        this.artist = response;
+        console.log(response);
+    }.bind(this));
+
+    // ApiService.getReleaseDate($routeParams.albumId)
 }

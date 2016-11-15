@@ -6,6 +6,6 @@ import {bandAlbumsController} from "./controllers/bandAlbumsController";
 angular
 .module("App", ["ngRoute"])
 .config(routes)
-.service("ApiService",['$http', ApiService])
+.service("ApiService", ['$http', ApiService])
 .controller('resultsCtrl', ['$scope', "ApiService", resultsController])
-.controller('bandAlbumsCtrl', ['$scope','$routeParams','ApiService' ,bandAlbumsController]);
+.controller('bandAlbumsCtrl', ['$scope', '$routeParams', 'ApiService', bandAlbumsController]);

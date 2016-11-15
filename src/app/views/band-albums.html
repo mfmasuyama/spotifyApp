@@ -1,4 +1,4 @@
-<div class="band-detail-container" ng-controller="bandAlbumsCtrl">
+<div class="band-detail-container">
     <nav class="nav">
         <a href="/"><img src="/app/images/spotify-icon.png" alt="" class="logo-left"></a>
         <div class="column-search">
@@ -8,10 +8,10 @@
     </nav>
     <div class="row">
         <div class="inside-container">
-            <img src="https://i.scdn.co/image/66302ca80395b6be3600d5f0ef69db9e0c43f4f5" alt="" class="img-title">
-            <h1 class="title">Artist name</h1>
-            <h3 class="genre">Genre</h3>
-            <p class="links"><a href="/">HOME</a> > <a href="/results">ARTISTS</a> > ARTIST NAME</p>
+            <img src="{{bandAlbumsCtrl.artist.images[0].url}}" alt="" class="img-title">
+            <h1 class="title">{{bandAlbumsCtrl.artist.name}}</h1>
+            <h3 class="genre">{{bandAlbumsCtrl.artist.genres}}</h3> <!--FIX-->
+            <p class="links"><a href="/">HOME</a> > <a href="/results">ARTISTS</a> > {{bandAlbumsCtrl.artist.name}}</p>
         </div>
     </div>
     <div class="inside-container">
@@ -20,7 +20,7 @@
                 <div class="item-album">
                     <img src={{item.images[0].url}} alt="">
                     <p class="album">{{item.name}}</p>
-                    <p class="year">1950</p>
+                    <p class="year">1950</p> <!--FIX-->
                 </div>
             </a>
         </div>
