@@ -10,7 +10,7 @@
         <div class="inside-container">
             <img src="{{bandAlbumsCtrl.artist.images[0].url}}" alt="" class="img-title">
             <h1 class="title">{{bandAlbumsCtrl.artist.name}}</h1>
-            <h3 class="genre">{{bandAlbumsCtrl.artist.genres}}</h3> <!--FIX-->
+            <h3 class="genre">{{bandAlbumsCtrl.artist.genres.join(', ')}}</h3>
             <p class="links"><a href="/">HOME</a> > <a href="/results">ARTISTS</a> > {{bandAlbumsCtrl.artist.name}}</p>
         </div>
     </div>

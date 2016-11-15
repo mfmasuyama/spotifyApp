@@ -92,12 +92,12 @@ div[class^="item"] {
     line-height: 17px;
 }
 
-div[class^="item"]:nth-child(odd) {
+div[class^="item"]:nth-child(even) { /* FIX Maybe I should make a class named: row-results */
     float: right;
     margin-left: 1%;
 }
 
-div[class^="item"]:nth-child(even) {
+div[class^="item"]:nth-child(odd) { /* FIX */
     float: left;
     margin-right: 1%;
 }

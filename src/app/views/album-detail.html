@@ -10,7 +10,7 @@
         <div class="inside-container">
             <img src="{{albumDetailCtrl.album.images[0].url}}" alt="" class="img-title">
             <h1 class="title">{{albumDetailCtrl.album.name}}</h1>
-            <h3 class="artist-year">{{albumDetailCtrl.artist.name}} - {{albumDetailCtrl.album.release_date}}</h3> <!--FIX: release data-->
+            <h3 class="artist-year">{{albumDetailCtrl.artist.name}} - {{albumDetailCtrl.album.release_date | limitTo:4}}</h3>
             <p class="links"><a href="/">HOME</a> > <a href="/results">ARTISTS</a> > <a href="/band-albums">{{albumDetailCtrl.artist.name}}</a> > {{albumDetailCtrl.album.name}}</p>
         </div>
     </div>
