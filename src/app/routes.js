@@ -12,8 +12,8 @@ $routeProvider
         templateUrl: "app/views/index.html",
         controller: 'indexCtrl'
     })
-    .when("/album-detail", {
-        templateUrl: "app/views/album-detail.html",
+    .when("/album-detail/:bandId/:albumId", {
+        templateUrl: "/app/views/album-detail.html",
         controller: 'albumDetailCtrl'
     })
     .when("/band-albums/:bandId", {

@@ -1,4 +1,4 @@
-<div class="container" ng-controller="myCtrl">
+<div class="container">
     <nav class="nav">
         <img src="/app/images/spotify-icon.png" alt="" class="logo-center">
     </nav>
@@ -9,8 +9,8 @@
             <p>Search your favourite songs over Spotify, just enter an artist's name in the following search box and enjoy!</p>
         </div>
         <div class="row">
-            <input type="text" class="search-input" placeholder="Type the name of your favourite artist" ng-model="myCtrl.artist">
-            <a href=""><i class="fa fa-search" aria-hidden="true" id="search-icon" ng-click="myCtrl.getArtists()"></i></a>
+            <input type="text" class="search-input" placeholder="Type the name of your favourite artist" ng-model="indexCtrl.artist">
+            <a href=""><i class="fa fa-search" aria-hidden="true" id="search-icon" ng-click="indexCtrl.getArtists()"></i></a>
         </div>
         <div class="row">
             <h2>Favourite songs</h2>

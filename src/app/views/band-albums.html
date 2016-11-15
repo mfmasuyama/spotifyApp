@@ -16,10 +16,10 @@
     </div>
     <div class="inside-container">
         <div class="row">
-            <a href="/album-detail/{{item.id}}" ng-repeat="item in bandAlbumsCtrl.albums">
+            <a href="/album-detail/{{bandAlbumsCtrl.artist.id}}/{{album.id}}" ng-repeat="album in bandAlbumsCtrl.albums">
                 <div class="item-album">
-                    <img src={{item.images[0].url}} alt="">
-                    <p class="album">{{item.name}}</p>
+                    <img src={{album.images[0].url}} alt="">
+                    <p class="album">{{album.name}}</p>
                     <p class="year">1950</p> <!--FIX-->
                 </div>
             </a>

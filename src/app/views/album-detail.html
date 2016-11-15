@@ -8,10 +8,10 @@
     </nav>
     <div class="row">
         <div class="inside-container">
-            <img src="https://i.scdn.co/image/66302ca80395b6be3600d5f0ef69db9e0c43f4f5" alt="" class="img-title">
-            <h1 class="title">Album title</h1>
-            <h3 class="artist-year"> Artist - 1234</h3>
-            <p class="links"><a href="/">HOME</a> > <a href="/results">ARTISTS</a> > <a href="/band-albums">ARTIST NAME</a> > ALBUM TITLE</p>
+            <img src="{{albumDetailCtrl.album.images[0].url}}" alt="" class="img-title">
+            <h1 class="title">{{albumDetailCtrl.album.name}}</h1>
+            <h3 class="artist-year">{{albumDetailCtrl.artist.name}} - {{albumDetailCtrl.album.release_date}}</h3> <!--FIX: release data-->
+            <p class="links"><a href="/">HOME</a> > <a href="/results">ARTISTS</a> > <a href="/band-albums">{{albumDetailCtrl.artist.name}}</a> > {{albumDetailCtrl.album.name}}</p>
         </div>
     </div>
     <div class="inside-container">
@@ -23,37 +23,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Sandwich</td>
+                    <tr ng-repeat="track in albumDetailCtrl.tracks">
+                        <td>{{track.name}}</td>
                         <td>
                             <a href=""><i class="fa fa-star" aria-hidden="true"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>7UP</td>
-                        <td>
-                            <a href=""><i class="fa fa-star" aria-hidden="true"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Cookies</td>
-                        <td>
-                            <a href=""><i class="fa fa-star" aria-hidden="true"></i></a>
-                        </td>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Cake</td>
-                        <td>
-                            <a href=""><i class="fa fa-star" aria-hidden="true"></i></a>
-                        </td>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Ice-cream</td>
-                        <td>
-                            <a href=""><i class="fa fa-star" aria-hidden="true"></i></a>
-                        </td>
                         </td>
                     </tr>
                 </tbody>

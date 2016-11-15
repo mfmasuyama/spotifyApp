@@ -3,8 +3,8 @@ export function resultsController($scope, ApiService) {
 
     this.getArtists = function() {
         ApiService.getArtists($scope.resultsCtrl.artist)
-        .then(function(artists) {
-            this.artists = artists.items;
+        .then(function(response) {
+            this.artists = response;
         }.bind(this));
     }
 }
