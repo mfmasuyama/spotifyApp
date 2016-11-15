@@ -14,9 +14,9 @@ export function ApiService($http) {
     this.getAlbums = function(id) {
         return $http({
             method: 'GET',
-            url: "https://api.spotify.com/v1/artists/"+id+"/albums"
+            url: "https://api.spotify.com/v1/artists/" + id + "/albums"
         }).then(function success(response) {
-            console.log( response.data);
+            return response.data;
         }, function error() {
             console.error('Error');
         });

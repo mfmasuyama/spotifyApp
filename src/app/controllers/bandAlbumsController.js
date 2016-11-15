@@ -1,6 +1,7 @@
 export function bandAlbumsController($scope,$routeParams, ApiService) {
     $scope.resultsCtrl = this;
-
-    ApiService.getAlbums($routeParams.bandId);
+    this.albums = ApiService.getAlbums($routeParams.bandId);
+    /*ApiService.getArtist($routeParams.bandId);*/
+    console.log(this.albums);
 
 }
