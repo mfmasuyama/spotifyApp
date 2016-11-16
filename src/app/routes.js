@@ -20,8 +20,8 @@ $routeProvider
         templateUrl: "/app/views/band-albums.html",
         controller: 'bandAlbumsCtrl'
     })
-    .when("/results", {
-        templateUrl: "app/views/results.html",
+    .when("/results/:searchData", {
+        templateUrl: "/app/views/results.html",
         controller: 'resultsCtrl'
     })
 }

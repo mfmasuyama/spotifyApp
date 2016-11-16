@@ -5,17 +5,17 @@
     <div class="inside-container">
         <div class="row">
             <h1 class="title">Artists</h1>
-            <p>You are currently searching: {{resultsCtrl.artist}}</p>
+            <p>You are currently searching: {{resultsCtrl.search}}</p>
         </div>
         <div class="row">
-            <input type="text" class="search-input" placeholder="Type the name of your favourite artist" ng-model="resultsCtrl.artist">
-            <a href=""><i class="fa fa-search" aria-hidden="true" id="search-icon" ng-click="resultsCtrl.getArtists()"></i></a>
+            <input type="text" class="search-input" placeholder="Type the name of your favourite artist" ng-model="resultsCtrl.search">
+            <i class="fa fa-search" aria-hidden="true" id="search-icon" ng-click="resultsCtrl.getArtists()"></i>
         </div>
         <div class="row">
             <p class="links"><a href="/">HOME</a> > ARTISTS</p>
         </div>
         <div class="row">
-            <a href="/band-albums/{{item.id}}" ng-repeat="item in resultsCtrl.artists">
+            <a href="/band-albums/{{item.id}}" ng-repeat="item in resultsCtrl.artists"> <!--Delete a, and create goToBandAlbums() -->
                 <div class="item-artist">
                     <img src={{item.images[0].url}} alt="">
                     <p class="artist">{{item.name}}</p>

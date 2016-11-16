@@ -1,10 +1,7 @@
-// export function indexController($scope, ApiService) {
-//     $scope.indexCtrl = this;
-//
-//     this.getArtists = function() {
-//         ApiService.getArtists($scope.indexCtrl.artist)
-//         .then(function(response) {
-//             this.artists = response;
-//         }.bind(this));
-//     }
-// }
+export function indexController($scope, $location, ApiService) {
+    $scope.indexCtrl = this;
+
+    this.search = function() {
+        $location.path("/results/" + $scope.indexCtrl.searchData);
+    }.bind(this);
+}
