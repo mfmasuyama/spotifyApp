@@ -222,6 +222,10 @@ i[class$="star"] {
 i[class$="star"]:hover {
     color: rgb(255, 254, 3);
 }
+
+i[class$="play"]:hover {
+    color: rgb(176, 250, 215);
+}
 /*--------*/
 
 /* Responsive */

@@ -18,22 +18,38 @@ export function albumDetailController($scope, $routeParams, $location, ApiServic
 
     this.toIndex = function() {
         $location.path("/");
+        this.stopTrack();
     }.bind(this);
 
     this.toResults = function() {
         $location.path("/results/" + this.search);
+        this.stopTrack();
     }.bind(this);
 
     this.toBandAlbums = function() {
         $location.path("/band-albums/" + this.artist.id);
+        this.stopTrack();
     }.bind(this);
 
     this.backToResults = function() {
         $location.path("/results/" + this.artist.name);
+        this.stopTrack();
     }.bind(this);
 
     this.playTrack = function(track) {
-        this.audioObject = new Audio(track.preview_url);
-        this.audioObject.play();
+        if(typeof this.audioObject === "undefined") {
+            this.audioObject = new Audio(track.preview_url);
+            this.audioObject.play();
+        } else {
+            this.audioObject.pause();
+            this.audioObject = new Audio(track.preview_url);
+            this.audioObject.play();
+        }
+    }.bind(this);
+
+    this.stopTrack = function() {
+        if(typeof this.audioObject !== "undefined") {
+            this.audioObject.pause();
+        }
     }.bind(this);
 }
