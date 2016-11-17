@@ -16,10 +16,14 @@ export function bandAlbumsController($scope, $routeParams, $location, ApiService
     }.bind(this);
 
     this.toResults = function() {
-        $location.path("/results/" + $scope.bandAlbumsCtrl.search);
+        $location.path("/results/" + this.search);
     }.bind(this);
 
     this.toAlbumDetail = function(albumId) {
         $location.path("/album-detail/" +  $routeParams.bandId + "/" + albumId);
+    }.bind(this);
+
+    this.backToResults = function() {
+        $location.path("/results/" + this.artist.name);
     }.bind(this);
 }

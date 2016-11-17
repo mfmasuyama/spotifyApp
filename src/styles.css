@@ -203,7 +203,13 @@ tr td {
 	background-color: rgba(249, 163, 210, 0.4);
 }
 
-tr td:nth-child(2) {
+tr td:first-child {
+    width: 5%;
+    text-align: center;
+    text-indent: 0px;
+}
+
+tr td:nth-child(3) {
     width: 5%;
     text-align: center;
     text-indent: 0px;

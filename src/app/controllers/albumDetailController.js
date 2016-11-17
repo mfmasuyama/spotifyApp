@@ -14,7 +14,6 @@ export function albumDetailController($scope, $routeParams, $location, ApiServic
     ApiService.getAlbum($routeParams.albumId)
     .then(function(response) {
         this.album = response;
-        console.log(response);
     }.bind(this));
 
     this.toIndex = function() {
@@ -27,5 +26,14 @@ export function albumDetailController($scope, $routeParams, $location, ApiServic
 
     this.toBandAlbums = function() {
         $location.path("/band-albums/" + this.artist.id);
+    }.bind(this);
+
+    this.backToResults = function() {
+        $location.path("/results/" + this.artist.name);
+    }.bind(this);
+
+    this.playTrack = function(track) {
+        this.audioObject = new Audio(track.preview_url);
+        this.audioObject.play();
     }.bind(this);
 }
