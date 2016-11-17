@@ -20,6 +20,6 @@ export function bandAlbumsController($scope, $routeParams, $location, ApiService
     }.bind(this);
 
     this.toAlbumDetail = function(albumId) {
-        $location.path("/album-detail/" +  $scope.bandAlbumsCtrl.artist + "/" + albumId);
+        $location.path("/album-detail/" +  $routeParams.bandId + "/" + albumId);
     }.bind(this);
 }
