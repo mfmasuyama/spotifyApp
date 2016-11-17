@@ -55,6 +55,7 @@ img[class^="logo"] {
     width: 50px;
     margin: 20px;
     vertical-align: middle;
+    cursor: pointer;
 }
 /*--------*/
 
@@ -94,6 +95,7 @@ div[class^="item"] {
     box-sizing: border-box;
     margin-top: 1%; /*Provisional. 2%*/
     line-height: 17px;
+    cursor: pointer;
 }
 
 /*div[class^="item"]:nth-child(even) { /* FIX Maybe I should make a class named: row-results

@@ -1,9 +1,9 @@
 <div class="band-detail-container">
     <nav class="nav">
-        <a href="/"><img src="/app/images/spotify-icon.png" alt="" class="logo-left"></a>
+        <img src="/app/images/spotify-icon.png" alt="" class="logo-left" ng-click=bandAlbumsCtrl.toIndex()>
         <div class="column-search">
-            <input type="text" class="search-input" placeholder="Search for another artist">
-            <a href=""><i class="fa fa-search" aria-hidden="true" id="search-icon"></i></a>
+            <input type="text" class="search-input" placeholder="Search for another artist" ng-model="bandAlbumsCtrl.search">
+            <i class="fa fa-search" aria-hidden="true" id="search-icon" ng-click="bandAlbumsCtrl.toResults()"></i>
         </div>
     </nav>
     <div class="row">
@@ -16,13 +16,10 @@
     </div>
     <div class="inside-container">
         <div class="row">
-            <a href="/album-detail/{{bandAlbumsCtrl.artist.id}}/{{album.id}}" ng-repeat="album in bandAlbumsCtrl.albums">
-                <div class="item-album">
-                    <img src={{album.images[0].url}} alt="">
-                    <p class="album">{{album.name}}</p>
-                    <p class="year">1950</p> <!--FIX-->
-                </div>
-            </a>
+            <div class="item-album" ng-repeat="item in bandAlbumsCtrl.albums" ng-click="bandAlbumsCtrl.toAlbumDetail(item.id)">
+                <img src={{item.images[0].url}} alt="">
+                <p class="album">{{item.name}}</p>
+            </div>
         </div>
     </div>
     <footer class="footer"></footer>

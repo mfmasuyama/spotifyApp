@@ -1,6 +1,6 @@
 <div>
     <nav class="nav">
-        <a href="/"><img src="/app/images/spotify-icon.png" alt="" class="logo-center"></a>
+        <img src="/app/images/spotify-icon.png" alt="" class="logo-center" ng-click="resultsCtrl.toIndex()">
     </nav>
     <div class="inside-container">
         <div class="row">
@@ -15,12 +15,10 @@
             <p class="links"><a href="/">HOME</a> > ARTISTS</p>
         </div>
         <div class="row">
-            <a href="/band-albums/{{item.id}}" ng-repeat="item in resultsCtrl.artists"> <!--Delete a, and create goToBandAlbums() -->
-                <div class="item-artist">
-                    <img src={{item.images[0].url}} alt="">
-                    <p class="artist">{{item.name}}</p>
-                </div>
-            </a>
+            <div class="item-artist" ng-repeat="item in resultsCtrl.artists" ng-click="resultsCtrl.toBandAlbums(item.id)">
+                <img src={{item.images[0].url}} alt="">
+                <p class="artist">{{item.name}}</p>
+            </div>
         </div>
     </div>
     <footer class="footer"></footer>

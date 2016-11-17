@@ -1,7 +1,7 @@
 export function indexController($scope, $location, ApiService) {
     $scope.indexCtrl = this;
 
-    this.search = function() {
-        $location.path("/results/" + $scope.indexCtrl.searchData);
+    this.toResults = function() {
+        $location.path("/results/" + $scope.indexCtrl.search);
     }.bind(this);
 }

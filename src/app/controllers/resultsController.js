@@ -1,4 +1,4 @@
-export function resultsController($scope, $routeParams, ApiService) {
+export function resultsController($scope, $routeParams, $location, ApiService) {
     $scope.resultsCtrl = this;
 
     this.getArtists = function() {
@@ -9,11 +9,16 @@ export function resultsController($scope, $routeParams, ApiService) {
     }
 
     // Get artists from index
-    ApiService.getArtists($routeParams.searchData)
+    ApiService.getArtists($routeParams.search)
     .then(function(response) {
         this.artists = response;
-        console.log($routeParams.searchData);
-        console.log(response);
     }.bind(this));
 
+    this.toIndex = function() {
+        $location.path("/");
+    }.bind(this);
+
+    this.toBandAlbums = function(albumId) {
+        $location.path("/band-albums/" + albumId);
+    }.bind(this);
 }

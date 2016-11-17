@@ -1,17 +1,25 @@
-export function bandAlbumsController($scope, $routeParams, ApiService) {
+export function bandAlbumsController($scope, $routeParams, $location, ApiService) {
     $scope.bandAlbumsCtrl = this;
 
     ApiService.getAlbums($routeParams.bandId)
     .then(function(response) {
         this.albums = response;
-        console.log(response);
     }.bind(this));
 
     ApiService.getArtist($routeParams.bandId)
     .then(function(response) {
         this.artist = response;
-        console.log(response);
     }.bind(this));
 
-    // ApiService.getReleaseDate($routeParams.albumId)
+    this.toIndex = function() {
+        $location.path("/");
+    }.bind(this);
+
+    this.toResults = function() {
+        $location.path("/results/" + $scope.bandAlbumsCtrl.search);
+    }.bind(this);
+
+    this.toAlbumDetail = function(albumId) {
+        $location.path("/album-detail/" +  $scope.bandAlbumsCtrl.artist + "/" + albumId);
+    }.bind(this);
 }

@@ -1,9 +1,9 @@
 <div>
     <nav class="nav">
-        <a href="/"><img src="/app/images/spotify-icon.png" alt="" class="logo-left"></a>
+        <img src="/app/images/spotify-icon.png" alt="" class="logo-left" ng-click=albumDetailCtrl.toIndex()>
         <div class="column-search">
-            <input type="text" class="search-input" placeholder="Search for another artist">
-            <a href=""><i class="fa fa-search" aria-hidden="true" id="search-icon"></i></a>
+            <input type="text" class="search-input" placeholder="Search for another artist" ng-model="albumDetailCtrl.search">
+            <i class="fa fa-search" aria-hidden="true" id="search-icon" ng-click="albumDetailCtrl.toResults()"></i>
         </div>
     </nav>
     <div class="row">
@@ -23,8 +23,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="track in albumDetailCtrl.tracks">
-                        <td>{{track.name}}</td>
+                    <tr ng-repeat="item in albumDetailCtrl.tracks">
+                        <td>{{item.name}}</td>
                         <td>
                             <a href=""><i class="fa fa-star" aria-hidden="true"></i></a>
                         </td>

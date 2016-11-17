@@ -1,4 +1,4 @@
-export function albumDetailController($scope, $routeParams, ApiService) {
+export function albumDetailController($scope, $routeParams, $location, ApiService) {
     $scope.albumDetailCtrl = this;
 
     ApiService.getTracks($routeParams.albumId)
@@ -16,5 +16,13 @@ export function albumDetailController($scope, $routeParams, ApiService) {
         this.album = response;
         console.log(response);
     }.bind(this));
+
+    this.toIndex = function() {
+        $location.path("/");
+    }.bind(this);
+
+    this.toResults = function() {
+        $location.path("/results/" + $scope.albumDetailCtrl.search);
+    }.bind(this);
 
 }

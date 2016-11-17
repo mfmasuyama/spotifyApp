@@ -9,8 +9,8 @@
             <p>Search your favourite songs over Spotify, just enter an artist's name in the following search box and enjoy!</p>
         </div>
         <div class="row">
-            <input type="text" class="search-input" placeholder="Type the name of your favourite artist" ng-model="indexCtrl.searchData">
-            <i class="fa fa-search" aria-hidden="true" id="search-icon" ng-click="indexCtrl.search()"></i>
+            <input type="text" class="search-input" placeholder="Type the name of your favourite artist" ng-model="indexCtrl.search">
+            <i class="fa fa-search" aria-hidden="true" id="search-icon" ng-click="indexCtrl.toResults()"></i>
         </div>
         <div class="row">
             <h2>Favourite songs</h2>
