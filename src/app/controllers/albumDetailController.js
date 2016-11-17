@@ -22,7 +22,10 @@ export function albumDetailController($scope, $routeParams, $location, ApiServic
     }.bind(this);
 
     this.toResults = function() {
-        $location.path("/results/" + $scope.albumDetailCtrl.search);
+        $location.path("/results/" + this.search);
     }.bind(this);
 
+    this.toBandAlbums = function() {
+        $location.path("/band-albums/" + this.artist.id);
+    }.bind(this);
 }

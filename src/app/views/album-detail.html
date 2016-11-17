@@ -11,7 +11,9 @@
             <img src="{{albumDetailCtrl.album.images[0].url}}" alt="" class="img-title">
             <h1 class="title">{{albumDetailCtrl.album.name}}</h1>
             <h3 class="artist-year">{{albumDetailCtrl.artist.name}} - {{albumDetailCtrl.album.release_date | limitTo:4}}</h3>
-            <p class="links"><a href="/">HOME</a> > <a href="/results">ARTISTS</a> > <a href="/band-albums">{{albumDetailCtrl.artist.name}}</a> > {{albumDetailCtrl.album.name}}</p>
+            <p class="links">
+                <a ng-click=albumDetailCtrl.toIndex()>HOME</a> > <a>ARTISTS</a> > <a ng-click="albumDetailCtrl.toBandAlbums()">{{albumDetailCtrl.artist.name}}</a> > {{albumDetailCtrl.album.name}}
+            </p>
         </div>
     </div>
     <div class="inside-container">
@@ -24,9 +26,11 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="item in albumDetailCtrl.tracks">
-                        <td>{{item.name}}</td>
                         <td>
-                            <a href=""><i class="fa fa-star" aria-hidden="true"></i></a>
+                            {{item.name}}
+                        </td>
+                        <td>
+                            <i class="fa fa-star" aria-hidden="true"></i>
                         </td>
                     </tr>
                 </tbody>

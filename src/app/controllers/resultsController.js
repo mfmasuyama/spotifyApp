@@ -8,7 +8,6 @@ export function resultsController($scope, $routeParams, $location, ApiService) {
         }.bind(this));
     }
 
-    // Get artists from index
     ApiService.getArtists($routeParams.search)
     .then(function(response) {
         this.artists = response;

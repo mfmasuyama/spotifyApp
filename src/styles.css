@@ -34,6 +34,7 @@ a {
 
 p.links a:hover, #search-icon:hover {
     text-shadow: 1px 1px 2px rgb(249, 163, 210), 0 0 25px rgb(249, 163, 210), 0 0 5px rgb(249, 163, 210);
+    cursor: pointer;
 }
 
 i {
@@ -129,13 +130,14 @@ div[class^="item"] img {
 
 /* Search */
 .search-input {
-    height:20px;
+    height:25px;
     text-indent: 30px;
     border-radius: 8px;
-    width: 99.4%;
+    width: 100%;
     line-height: 25px;
     margin-top: 20px;
     margin-bottom: 20px;
+    border: none;
 }
 
 #search-icon {
@@ -143,8 +145,14 @@ div[class^="item"] img {
     width: 18px;
     height: 18px;
     margin-left: 10px;
-    bottom: 41px;
+    bottom: 43px;
     background-color: transparent;
+}
+
+input:focus {
+    outline: none;
+    border-color: rgb(249, 163, 210);
+    box-shadow: 0 0 10px rgb(249, 163, 210);
 }
 /*--------*/
 
