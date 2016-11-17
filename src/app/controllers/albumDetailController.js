@@ -1,4 +1,4 @@
-export function albumDetailController($scope, $routeParams, $location, ApiService) {
+export function albumDetailController($scope, $routeParams, $location, ApiService,StarService) {
     $scope.albumDetailCtrl = this;
 
     ApiService.getTracks($routeParams.albumId)
@@ -52,4 +52,8 @@ export function albumDetailController($scope, $routeParams, $location, ApiServic
             this.audioObject.pause();
         }
     }.bind(this);
+
+    this.changeStatus=function(item){
+        StarService.click(item);
+    }
 }
