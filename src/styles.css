@@ -246,13 +246,3 @@ i[class$="play"]:hover {
     }
 }
 /*--------*/
-
-input[type=checkbox] {
-	position: absolute;
-	top: -9999px;
-	left: -9999px;
-}
-
-input[type=checkbox]:checked + i[class$="star"] {
-	color: rgb(255, 254, 3);
-}
