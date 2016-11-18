@@ -1,8 +1,11 @@
 export function StarService($localStorage) {
 
-    this.favourites = new Array();
-
-    this.click = function(item) {
+    this.click = function(item) { /* FIX */
+        if(typeof localStorage.getItem("favourites") === "null") {
+            this.favourites = new Array();
+        } else {
+            this.favourites = localStorage.getItem("favourites");
+        }
         let isFavourite = false;
         for(let i=0; i<this.favourites.length; i++) {
             if(this.favourites[i].id === item.id) {
