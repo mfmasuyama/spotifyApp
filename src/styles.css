@@ -94,20 +94,10 @@ div[class^="item"] {
     background-color: rgba(249, 163, 210, 0.6);
     border: 1px solid rgb(255, 255, 255);
     box-sizing: border-box;
-    margin-top: 1%; /*Provisional. 2%*/
+    margin-top: 1%;
     line-height: 17px;
     cursor: pointer;
 }
-
-/*div[class^="item"]:nth-child(even) { /* FIX Maybe I should make a class named: row-results
-    float: right;
-    margin-left: 1%;
-}
-
-div[class^="item"]:nth-child(odd) {
-    float: left;
-    margin-right: 1%;
-}*/
 
 div[class^="item"] { /* Provisional */
     float: left;
@@ -219,9 +209,9 @@ i[class$="star"] {
     color: rgb(128, 128, 128);
 }
 
-i[class$="star"]:hover {
+/*i[class$="star"]:hover {
     color: rgb(255, 254, 3);
-}
+}*/
 
 i[class$="play"]:hover {
     color: rgb(176, 250, 215);
@@ -256,3 +246,13 @@ i[class$="play"]:hover {
     }
 }
 /*--------*/
+
+input[type=checkbox] {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+
+input[type=checkbox]:checked + i[class$="star"] {
+	color: rgb(255, 254, 3);
+}

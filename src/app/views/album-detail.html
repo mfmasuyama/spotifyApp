@@ -1,6 +1,6 @@
 <div>
     <nav class="nav">
-        <img src="/app/images/spotify-icon.png" alt="" class="logo-left" ng-click=albumDetailCtrl.toIndex()>
+        <img src="/app/images/spotify-icon.png" alt="Home" class="logo-left" ng-click=albumDetailCtrl.toIndex()>
         <div class="column-search">
             <input type="text" class="search-input" placeholder="Search for another artist" ng-model="albumDetailCtrl.search">
             <i class="fa fa-search" aria-hidden="true" id="search-icon" ng-click="albumDetailCtrl.toResults()"></i>
@@ -8,7 +8,7 @@
     </nav>
     <div class="row">
         <div class="inside-container">
-            <img src="{{albumDetailCtrl.album.images[0].url}}" alt="" class="img-title">
+            <img src="{{albumDetailCtrl.album.images[0].url}}" alt="{{albumDetailCtrl.album.name}}" class="img-title">
             <h1 class="title">{{albumDetailCtrl.album.name}}</h1>
             <h3 class="artist-year">{{albumDetailCtrl.artist.name}} - {{albumDetailCtrl.album.release_date | limitTo:4}}</h3>
             <p class="links">
@@ -33,6 +33,7 @@
                             {{item.name}}
                         </td>
                         <td>
+                            <input type="checkbox" id="toggle">
                             <i class="fa fa-star" aria-hidden="true" ng-click="albumDetailCtrl.changeStatus(item)"></i>
                         </td>
                     </tr>

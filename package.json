@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "scripts": {
     "test": "gulp test",
-    "start": "./node_modules/.bin/webpack-dev-server",
+    "start": "webpack-dev-server",
     "prebuild": "mkdir tmp; cp -R ./src ./tmp",
-    "build": "./node_modules/.bin/webpack",
+    "build": "webpack",
     "dev": "npm start -- --watch",
     "mock": "node server-mock.js"
   },
@@ -24,5 +24,17 @@
   },
   "engines": {
     "node": ">=4.0.0"
-  }
+  },
+  "description": "* [node](https://nodejs.org/en/) > 4\r * npm > 3",
+  "main": "webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mfmasuyama/spotifyApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mfmasuyama/spotifyApp/issues"
+  },
+  "homepage": "https://github.com/mfmasuyama/spotifyApp#readme"
 }

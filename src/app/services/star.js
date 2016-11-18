@@ -1,11 +1,8 @@
 export function StarService($localStorage) {
 
-
+    this.favourites = new Array();
 
     this.click = function(item) {
-        if($localStorage.getItem("favourites") === undefined) {
-            this.favourites = new Array();
-        }
         let isFavourite = false;
         for(let i=0; i<this.favourites.length; i++) {
             if(this.favourites[i].id === item.id) {
@@ -16,7 +13,7 @@ export function StarService($localStorage) {
         if(!isFavourite) {
             this.favourites.push(item);
         }
-        $localStorage.setItem("favourites", this.favourites);
+        console.log(this.favourites);
     }.bind(this);
 
     // this.isFav=function(id){
