@@ -53,7 +53,7 @@ export function albumDetailController($scope, $routeParams, $location, ApiServic
         }
     }.bind(this);
 
-    this.changeStatus=function(item){
-        StarService.click(item);
+    this.changeStatus=function(track, album){
+        StarService.click(track, album);
     }
 }
