@@ -53,7 +53,16 @@ export function albumDetailController($scope, $routeParams, $location, ApiServic
         }
     }.bind(this);
 
-    this.changeStatus=function(track, album){
+    this.changeStatus = function(track, album){
         StarService.click(track, album);
     }
+
+    this.changeClass= function(track) {
+        if(StarService.isFavourite(track)) {
+            return "yellow";
+        } else {
+            return "grey";
+        }
+    }.bind(this);
+
 }

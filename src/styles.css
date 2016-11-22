@@ -99,7 +99,7 @@ div[class^="item"] {
     cursor: pointer;
 }
 
-div[class^="item"] { /* Provisional */
+div[class^="item"] {
     float: left;
     margin-right: 0.5%;
     margin-left: 0.5%;
@@ -115,6 +115,10 @@ div[class^="item"] img {
     margin: 10px;
     vertical-align: middle;
     float: left;
+}
+
+div[class^="item"]:hover {
+    background-color: rgba(249, 163, 210, 0.8);
 }
 /*--------*/
 
@@ -205,12 +209,16 @@ tr td:nth-child(3) {
     text-indent: 0px;
 }
 
-i[class$="star"] {
+.grey {
     color: rgb(128, 128, 128);
 }
 
-/*i[class$="star"]:hover {
-    color: rgb(255, 254, 3);
+.yellow {
+    color: rgb(255, 255, 102);
+}
+
+/*i[class$="star"] {
+    color: rgb(128, 128, 128);
 }*/
 
 i[class$="play"]:hover {
