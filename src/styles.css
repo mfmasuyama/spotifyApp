@@ -217,10 +217,6 @@ tr td:nth-child(3) {
     color: rgb(255, 255, 102);
 }
 
-/*i[class$="star"] {
-    color: rgb(128, 128, 128);
-}*/
-
 i[class$="play"]:hover {
     color: rgb(176, 250, 215);
 }
