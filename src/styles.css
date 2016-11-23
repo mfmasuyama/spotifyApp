@@ -42,7 +42,7 @@ i {
     width: 100%;
     background-color: rgb(249, 163, 210);
     border-bottom: 1px solid rgb(255, 255, 255);
-    overflow:hidden;
+    overflow: hidden;
 }
 /*---------*/
 
@@ -56,7 +56,7 @@ img[class^="logo"] {
 }
 /*--------*/
 
-/* Nav with logo-center*/
+/* Nav with logo-center */
 img.logo-center  {
     display: block;
     margin-left: auto;
@@ -70,7 +70,7 @@ img.logo-left {
 }
 /*--------*/
 
-/* Title*/
+/* Title */
 .title {
     font-size: 35px;
     font-weight: bold;
@@ -84,7 +84,7 @@ img.logo-left {
 }
 /*--------*/
 
-/* Items: Favourite Song - Artist*/
+/* Items: Favourite Song - Artist */
 div[class^="item"] {
     width: 49%;
     background-color: rgba(249, 163, 210, 0.6);
@@ -146,7 +146,7 @@ input:focus {
 }
 /*--------*/
 
-/* Search in column*/
+/* Search in column */
 .column-search {
     width: 40%;
     float: right;
