@@ -213,7 +213,7 @@ tr td:nth-child(3) {
     color: rgb(255, 255, 102);
 }
 
-i[class$="play"]:hover {
+i[class$="play"]:hover, i[class$="pause"]:hover {
     color: rgb(176, 250, 215);
 }
 
