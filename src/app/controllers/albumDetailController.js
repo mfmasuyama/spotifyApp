@@ -40,10 +40,28 @@ export function albumDetailController($scope, $routeParams, $location, ApiServic
         if(typeof this.audioObject === "undefined") {
             this.audioObject = new Audio(track.preview_url);
             this.audioObject.play();
+            this.status = "playing";
+        } else if (this.audioObject.src === track.preview_url) {
+            if(this.status === "playing") {
+                this.audioObject.pause();
+                this.status = "paused";
+            } else {
+                this.audioObject.play();
+                this.status = "playing";
+            }
         } else {
             this.audioObject.pause();
             this.audioObject = new Audio(track.preview_url);
             this.audioObject.play();
+            this.status = "playing";
+        }
+    }.bind(this);
+
+    this.changePlayPauseButton = function(track) {
+        if(this.audioObject.src === track.preview_url && this.status === "playing") {
+            return "fa fa-pause";
+        } else {
+            return "fa fa-play";
         }
     }.bind(this);
 
@@ -57,7 +75,7 @@ export function albumDetailController($scope, $routeParams, $location, ApiServic
         StarService.click(track, album);
     }
 
-    this.changeClass= function(track) {
+    this.changeClass = function(track) {
         if(StarService.isFavourite(track)) {
             return "yellow";
         } else {
