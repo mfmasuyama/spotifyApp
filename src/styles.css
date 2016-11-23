@@ -19,10 +19,6 @@ body {
     overflow: auto;
 }
 
-.inside-container:not(.row .inside-container) { /* FIX */
-    min-height: 600px;
-}
-
 .row {
     width: 100%;
 }

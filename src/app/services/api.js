@@ -82,7 +82,5 @@ export function ApiService($http) {
         }
         return 0;
     }
-
-
-
+    
 }

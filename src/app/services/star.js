@@ -27,7 +27,6 @@ export function StarService($localStorage) {
             this.favourites.push(aux);
         }
         localStorage.setItem("favourites", JSON.stringify(this.favourites));
-        console.log(this.favourites);
     }.bind(this);
 
     this.getFavourites = function() {
