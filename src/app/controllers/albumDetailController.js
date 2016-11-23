@@ -65,4 +65,11 @@ export function albumDetailController($scope, $routeParams, $location, ApiServic
         }
     }.bind(this);
 
+    this.orderUp = function() {
+        this.tracks = ApiService.orderUp(this.tracks);
+    }
+
+    this.orderDown = function() {
+        this.tracks = ApiService.orderDown(this.tracks);
+    }
 }
