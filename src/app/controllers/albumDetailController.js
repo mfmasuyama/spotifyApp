@@ -14,6 +14,7 @@ export function albumDetailController($scope, $routeParams, $location, ApiServic
     ApiService.getAlbum($routeParams.albumId)
     .then(function(response) {
         this.album = response;
+        console.log(response);
     }.bind(this));
 
     this.toIndex = function() {
