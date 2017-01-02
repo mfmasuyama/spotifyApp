@@ -5,7 +5,7 @@
     <div class="inside-container">
         <div class="row">
             <h1 class="title">Artists</h1>
-            <p>You are currently searching: {{resultsCtrl.search}}</p>
+            <p ng-show="resultsCtrl.search">You are currently searching: {{resultsCtrl.search}}</p>
         </div>
         <div class="row">
             <input type="text" class="search-input" placeholder="Type the name of your favourite artist" ng-model="resultsCtrl.search">
