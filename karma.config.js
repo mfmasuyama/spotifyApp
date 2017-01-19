@@ -26,6 +26,7 @@ module.exports = function(config) {
       'js/libs/angular-mocks.js',
       'js/libs/angular-route.js',
       'js/application.js',
+      'src/app/*/*.js', // Nuevo.
       'spec/*.spec.js'
     ],
 
