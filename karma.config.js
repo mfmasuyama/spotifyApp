@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Tue Jan 17 2017 11:43:08 GMT-0300 (Argentina Standard Time)
+// Generated on Wed Jan 18 2017 10:59:16 GMT-0300 (SA Eastern Standard Time)
 
 module.exports = function(config) {
   config.set({
@@ -14,14 +14,25 @@ module.exports = function(config) {
 
 
     // list of files / patterns to load in the browser
+    // files: [
+    //   '"*.js"',
+    //   '*.js',
+    //   'spec/*.js',
+    //   'spec/*.js'
+    // ],
+
     files: [
-      '*.js',
-      'test/**/*.js'
+      'js/libs/angular.js',
+      'js/libs/angular-mocks.js',
+      'js/libs/angular-route.js',
+      'js/application.js',
+      'spec/*.spec.js'
     ],
 
 
     // list of files to exclude
     exclude: [
+      'karma.config.js'
     ],
 
 
@@ -34,7 +45,8 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    // Originalmente era 'progress'. Para spec --> npm install karma-spec-reporter --save-dev
+    reporters: ['spec'],
 
 
     // web server port
