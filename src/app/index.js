@@ -8,7 +8,7 @@ import {bandAlbumsController} from "./controllers/bandAlbumsController";
 import {albumDetailController} from "./controllers/albumDetailController";
 
 angular
-.module("App", ["ngRoute","ngStorage"])
+.module("App", ["ngRoute","ngStorage", "ngMock"])
 .config(routes)
 .service("ApiService", ['$http', ApiService])
 .service("StarService", ['$localStorage', StarService])

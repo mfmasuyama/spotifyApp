@@ -26,7 +26,10 @@ module.exports = function(config) {
       'js/libs/angular-mocks.js',
       'js/libs/angular-route.js',
       'js/application.js',
-      'src/app/*/*.js', // Nuevo.
+      // '*.js', // Nuevo.
+      'src/*.js', // Nuevo.
+      'src/app/*.js', // Nuevo.
+      'src/app/services/*.js', // Nuevo. Cambié * por services. Con * tira error.
       'spec/*.spec.js'
     ],
 
@@ -40,6 +43,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+
     },
 
 
