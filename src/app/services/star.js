@@ -1,15 +1,11 @@
-export function StarService($localStorage) {
+export default class {
 
     // window.onload = function() {
     //     localStorage.removeItem("favourites");
     // }
+    constructor() {}
 
-    function FavData (track, album) {
-        this.album = album;
-        this.track = track;
-    }
-
-    this.click = function(track, album) {
+    click(track, album) {
         let retrievedFavourites = localStorage.getItem("favourites");
         this.favourites = JSON.parse(retrievedFavourites);
         if(!Array.isArray(this.favourites)) {
@@ -27,15 +23,15 @@ export function StarService($localStorage) {
             this.favourites.push(aux);
         }
         localStorage.setItem("favourites", JSON.stringify(this.favourites));
-    }.bind(this);
+    }
 
-    this.getFavourites = function() {
+    getFavourites() {
         let retrievedFavourites = localStorage.getItem("favourites");
         this.favourites = JSON.parse(retrievedFavourites);
         return this.favourites;
-    }.bind(this);
+    }
 
-    this.isFavourite = function(track){
+    isFavourite(track){
         let retrievedFavourites = localStorage.getItem("favourites");
         this.favourites = JSON.parse(retrievedFavourites);
         if(!Array.isArray(this.favourites)) {
@@ -50,4 +46,9 @@ export function StarService($localStorage) {
         return false;
     }
 
+}
+
+function FavData (track, album) {
+    this.album = album;
+    this.track = track;
 }

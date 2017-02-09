@@ -1,7 +1,11 @@
-export function ApiService($http) {
+export default class {
 
-    this.getArtists = function(name) {
-        return $http({
+    constructor($http) {
+        this.http = $http;
+    } // ?
+
+    getArtists(name) {
+        return this.http({
             method: 'GET',
             url: "https://api.spotify.com/v1/search?q=" + name + "&type=artist&limit=10"
         }).then(function(response) {
@@ -11,8 +15,8 @@ export function ApiService($http) {
         });
     }
 
-    this.getAlbums = function(id) {
-        return $http({
+    getAlbums(id) {
+        return this.http({
             method: 'GET',
             url: "https://api.spotify.com/v1/artists/" + id + "/albums"
         }).then(function success(response) {
@@ -22,8 +26,8 @@ export function ApiService($http) {
         });
     }
 
-    this.getArtist = function(id) {
-        return $http({
+    getArtist(id) {
+        return this.http({
             method: 'GET',
             url: "https://api.spotify.com/v1/artists/" + id
         }).then(function success(response) {
@@ -33,8 +37,8 @@ export function ApiService($http) {
         });
     }
 
-    this.getTracks = function(id) {
-        return $http({
+    getTracks(id) {
+        return this.http({
             method: 'GET',
             url: "https://api.spotify.com/v1/albums/" + id + "/tracks"
         }).then(function success(response) {
@@ -44,8 +48,8 @@ export function ApiService($http) {
         });
     }
 
-    this.getAlbum = function(id) {
-        return $http({
+    getAlbum(id) {
+        return this.http({
             method: 'GET',
             url: "https://api.spotify.com/v1/albums/" + id
         }).then(function success(response) {
@@ -55,32 +59,32 @@ export function ApiService($http) {
         });
     }
 
-    this.orderUp = function(tracks) {
+    orderUp(tracks) {
         return tracks.sort(compareUp);
     }
 
-    this.orderDown = function(tracks) {
+    orderDown(tracks) {
         return tracks.sort(compareDown);
     }
 
-    function compareDown(a,b) {
-        if (a.duration_ms < b.duration_ms) {
-            return -1;
-        }
-        if (a.duration_ms > b.duration_ms) {
-            return 1;
-        }
-        return 0;
-    }
+}
 
-    function compareUp(a,b) {
-        if (a.duration_ms > b.duration_ms) {
-            return -1;
-        }
-        if (a.duration_ms < b.duration_ms) {
-            return 1;
-        }
-        return 0;
+function compareDown(a,b) {
+    if (a.duration_ms < b.duration_ms) {
+        return -1;
     }
+    if (a.duration_ms > b.duration_ms) {
+        return 1;
+    }
+    return 0;
+}
 
+function compareUp(a,b) {
+    if (a.duration_ms > b.duration_ms) {
+        return -1;
+    }
+    if (a.duration_ms < b.duration_ms) {
+        return 1;
+    }
+    return 0;
 }

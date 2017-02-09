@@ -1,4 +1,4 @@
-export function albumDetailController($scope, $routeParams, $location, ApiService,StarService) {
+export function albumDetailController($scope, $routeParams, $location, ApiService, StarService) {
     $scope.albumDetailCtrl = this;
 
     ApiService.getTracks($routeParams.albumId)
