@@ -1,6 +1,6 @@
 import 'ngstorage';
 import {routes} from "./routes";
-import ApiService from "./services";
+import ApiService from "./services/api";
 import StarService from "./services/star";
 import {indexController} from "./controllers/indexController";
 import {resultsController} from "./controllers/resultsController";

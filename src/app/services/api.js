@@ -1,8 +1,8 @@
 export default class {
 
     constructor($http) {
-        this.http = $http;
-    } // ?
+      this.http = $http;
+    }
 
     getArtists(name) {
         return this.http({
@@ -10,7 +10,7 @@ export default class {
             url: "https://api.spotify.com/v1/search?q=" + name + "&type=artist&limit=10"
         }).then(function(response) {
             return response.data.artists.items;
-        }, function() {
+        }.bind(this), function() {
             console.error('Error');
         });
     }
@@ -21,7 +21,7 @@ export default class {
             url: "https://api.spotify.com/v1/artists/" + id + "/albums"
         }).then(function success(response) {
             return response.data.items;
-        }, function error() {
+        }.bind(this), function error() {
             console.error('Error');
         });
     }
@@ -32,7 +32,7 @@ export default class {
             url: "https://api.spotify.com/v1/artists/" + id
         }).then(function success(response) {
             return response.data;
-        }, function error() {
+        }.bind(this), function error() {
             console.error('Error');
         });
     }
@@ -43,7 +43,7 @@ export default class {
             url: "https://api.spotify.com/v1/albums/" + id + "/tracks"
         }).then(function success(response) {
             return response.data.items;
-        }, function error() {
+        }.bind(this), function error() {
             console.error('Error');
         });
     }
@@ -54,7 +54,7 @@ export default class {
             url: "https://api.spotify.com/v1/albums/" + id
         }).then(function success(response) {
             return response.data;
-        }, function error() {
+        }.bind(this), function error() {
             console.error('Error');
         });
     }
