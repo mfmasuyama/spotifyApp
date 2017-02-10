@@ -8,9 +8,9 @@ export default class {
         return this.http({
             method: 'GET',
             url: "https://api.spotify.com/v1/search?q=" + name + "&type=artist&limit=10"
-        }).then(function(response) {
+        }).then((response) => {
             return response.data.artists.items;
-        }.bind(this), function() {
+        }, function() {
             console.error('Error');
         });
     }
@@ -19,9 +19,9 @@ export default class {
         return this.http({
             method: 'GET',
             url: "https://api.spotify.com/v1/artists/" + id + "/albums"
-        }).then(function success(response) {
+        }).then((response) => {
             return response.data.items;
-        }.bind(this), function error() {
+        }, function error() {
             console.error('Error');
         });
     }
@@ -30,9 +30,9 @@ export default class {
         return this.http({
             method: 'GET',
             url: "https://api.spotify.com/v1/artists/" + id
-        }).then(function success(response) {
+        }).then((response) => {
             return response.data;
-        }.bind(this), function error() {
+        }, function error() {
             console.error('Error');
         });
     }
@@ -41,9 +41,9 @@ export default class {
         return this.http({
             method: 'GET',
             url: "https://api.spotify.com/v1/albums/" + id + "/tracks"
-        }).then(function success(response) {
+        }).then((response) => {
             return response.data.items;
-        }.bind(this), function error() {
+        }, function error() {
             console.error('Error');
         });
     }
@@ -52,9 +52,9 @@ export default class {
         return this.http({
             method: 'GET',
             url: "https://api.spotify.com/v1/albums/" + id
-        }).then(function success(response) {
+        }).then((response) => {
             return response.data;
-        }.bind(this), function error() {
+        }, function error() {
             console.error('Error');
         });
     }
