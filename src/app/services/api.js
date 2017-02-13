@@ -10,7 +10,7 @@ export default class {
             url: "https://api.spotify.com/v1/search?q=" + name + "&type=artist&limit=10"
         }).then((response) => {
             return response.data.artists.items;
-        }, function() {
+        }, () => {
             console.error('Error');
         });
     }
@@ -21,7 +21,7 @@ export default class {
             url: "https://api.spotify.com/v1/artists/" + id + "/albums"
         }).then((response) => {
             return response.data.items;
-        }, function error() {
+        },  () => {
             console.error('Error');
         });
     }
@@ -32,7 +32,7 @@ export default class {
             url: "https://api.spotify.com/v1/artists/" + id
         }).then((response) => {
             return response.data;
-        }, function error() {
+        }, () => {
             console.error('Error');
         });
     }
@@ -43,7 +43,7 @@ export default class {
             url: "https://api.spotify.com/v1/albums/" + id + "/tracks"
         }).then((response) => {
             return response.data.items;
-        }, function error() {
+        }, () => {
             console.error('Error');
         });
     }
@@ -54,7 +54,7 @@ export default class {
             url: "https://api.spotify.com/v1/albums/" + id
         }).then((response) => {
             return response.data;
-        }, function error() {
+        }, () => {
             console.error('Error');
         });
     }

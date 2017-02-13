@@ -2,28 +2,28 @@ export function bandAlbumsController($scope, $routeParams, $location, ApiService
     $scope.bandAlbumsCtrl = this;
 
     ApiService.getAlbums($routeParams.bandId)
-    .then(function(response) {
+    .then((response) => {
         this.albums = response;
-    }.bind(this));
+    });
 
     ApiService.getArtist($routeParams.bandId)
-    .then(function(response) {
+    .then((response) => {
         this.artist = response;
-    }.bind(this));
+    });
 
-    this.toIndex = function() {
+    this.toIndex = () => {
         $location.path("/");
-    }.bind(this);
+    };
 
-    this.toResults = function() {
+    this.toResults = () => {
         $location.path("/results/" + this.search);
-    }.bind(this);
+    };
 
-    this.toAlbumDetail = function(albumId) {
+    this.toAlbumDetail = (albumId) => {
         $location.path("/album-detail/" +  $routeParams.bandId + "/" + albumId);
-    }.bind(this);
+    };
 
-    this.backToResults = function() {
+    this.backToResults = () => {
         $location.path("/results/" + this.artist.name);
-    }.bind(this);
+    };
 }

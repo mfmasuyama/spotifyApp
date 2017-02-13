@@ -1,23 +1,23 @@
 export function resultsController($scope, $routeParams, $location, ApiService) {
     $scope.resultsCtrl = this;
 
-    this.getArtists = function() {
+    this.getArtists = () => {
         ApiService.getArtists($scope.resultsCtrl.search)
-        .then(function(response) {
+        .then((response) => {
             this.artists = response;
-        }.bind(this));
+        });
     }
 
     ApiService.getArtists($routeParams.search)
-    .then(function(response) {
+    .then((response) => {
         this.artists = response;
-    }.bind(this));
+    });
 
-    this.toIndex = function() {
+    this.toIndex = () => {
         $location.path("/");
-    }.bind(this);
+    };
 
-    this.toBandAlbums = function(albumId) {
+    this.toBandAlbums = (albumId) => {
         $location.path("/band-albums/" + albumId);
-    }.bind(this);
+    };
 }
