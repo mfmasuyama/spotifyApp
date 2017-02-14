@@ -22,6 +22,7 @@ $routeProvider
     })
     .when("/results/:search", {
         templateUrl: "/app/views/results.html",
-        controller: 'resultsCtrl'
+        controller: 'resultsCtrl',
+        controllerAs: 'resCtrl'
     })
 }

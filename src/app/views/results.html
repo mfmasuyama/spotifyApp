@@ -1,23 +1,23 @@
 <div>
     <nav class="nav">
-        <img src="/app/images/spotify-icon.png" alt="Home" class="logo-center" ng-click="resultsCtrl.toIndex()">
+        <img src="/app/images/spotify-icon.png" alt="Home" class="logo-center" ng-click="resCtrl.toIndex()">
     </nav>
     <div class="inside-container">
         <div class="row">
             <h1 class="title">Artists</h1>
-            <p ng-show="resultsCtrl.search">You are currently searching: {{resultsCtrl.search}}</p>
+            <p ng-show="resCtrl.search">You are currently searching: {{resCtrl.search}}</p>
         </div>
         <div class="row">
-            <input type="text" class="search-input" placeholder="Type the name of your favourite artist" ng-model="resultsCtrl.search">
-            <i class="fa fa-search" aria-hidden="true" id="search-icon" ng-click="resultsCtrl.getArtists()"></i>
+            <input type="text" class="search-input" placeholder="Type the name of your favourite artist" ng-model="resCtrl.search">
+            <i class="fa fa-search" aria-hidden="true" id="search-icon" ng-click="resCtrl.getArtists()"></i>
         </div>
         <div class="row">
             <p class="links">
-                <a ng-click="resultsCtrl.toIndex()">HOME</a> > ARTISTS
+                <a ng-click="resCtrl.toIndex()">HOME</a> > ARTISTS
             </p>
         </div>
         <div class="row">
-            <div class="item-artist" ng-repeat="item in resultsCtrl.artists" ng-click="resultsCtrl.toBandAlbums(item.id)">
+            <div class="item-artist" ng-repeat="item in resCtrl.artists" ng-click="resCtrl.toBandAlbums(item.id)">
                 <img src={{item.images[0].url}} alt="{{item.name}}">
                 <p class="artist">{{item.name}}</p>
             </div>

@@ -3,7 +3,7 @@ import {routes} from "./routes";
 import ApiService from "./services/api";
 import StarService from "./services/star";
 import {indexController} from "./controllers/indexController";
-import {resultsController} from "./controllers/resultsController";
+import resultsController from "./controllers/resultsController";
 import {bandAlbumsController} from "./controllers/bandAlbumsController";
 import {albumDetailController} from "./controllers/albumDetailController";
 
