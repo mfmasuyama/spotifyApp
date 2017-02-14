@@ -9,7 +9,7 @@ export default class {
 
     this.artists = [];
 
-    $scope.resCtrl.getArtists = function() {        debugger;
+    this.getArtists = function() {
         ApiService.getArtists($scope.resCtrl.search)
         .then((response) => {
             console.log(response);
@@ -19,7 +19,6 @@ export default class {
 
     ApiService.getArtists($routeParams.search)
     .then((response) => {
-        debugger;
         this.artists = response;
     });
 
@@ -28,7 +27,7 @@ export default class {
         $location.path("/");
     };
 
-    $scope.toBandAlbums = function(albumId) {
+    this.toBandAlbums = function(albumId) {
         $location.path("/band-albums/" + albumId);
     };
 

@@ -1,4 +1,8 @@
 import 'angular-route';
+import {indexController} from "./controllers/indexController";
+import resultsController from "./controllers/resultsController";
+import {bandAlbumsController} from "./controllers/bandAlbumsController";
+import {albumDetailController} from "./controllers/albumDetailController";
 
 export function routes($routeProvider, $locationProvider) {
     $locationProvider.html5Mode({
@@ -10,19 +14,22 @@ export function routes($routeProvider, $locationProvider) {
 $routeProvider
     .when("/", {
         templateUrl: "app/views/index.html",
-        controller: 'indexCtrl'
+        controller: indexController,
+        controllerAs: 'indCtrl'
     })
     .when("/album-detail/:bandId/:albumId", {
         templateUrl: "/app/views/album-detail.html",
-        controller: 'albumDetailCtrl'
+        controller: albumDetailController,
+        controllerAs: 'albCtrl'
     })
     .when("/band-albums/:bandId", {
         templateUrl: "/app/views/band-albums.html",
-        controller: 'bandAlbumsCtrl'
+        controller: bandAlbumsController,
+        controllerAs: 'bandCtrl'
     })
     .when("/results/:search", {
         templateUrl: "/app/views/results.html",
-        controller: 'resultsCtrl',
+        controller: resultsController,
         controllerAs: 'resCtrl'
     })
 }
