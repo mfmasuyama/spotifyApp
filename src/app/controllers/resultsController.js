@@ -7,7 +7,7 @@ export default class {
         ApiService
     ) {
 
-    this.artists = [];
+    // this.artists = [];
 
     this.getArtists = function() {
         ApiService.getArtists($scope.resCtrl.search)
