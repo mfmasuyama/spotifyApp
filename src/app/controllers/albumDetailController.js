@@ -63,10 +63,14 @@ export default class {
     };
 
     this.changePlayPauseButton = (track) => {
-        if(this.audioObject.src === track.preview_url && this.status === "playing") {
-            return "fa fa-pause";
+        if(typeof this.audioObject !== "undefined") {
+            if(this.audioObject.src === track.preview_url && this.status === "playing") {
+                return "fa fa-pause";
+            } else {
+                return "fa fa-play";
+            }
         } else {
-            return "fa fa-play";
+            return "fa-fa-play"
         }
     };
 
