@@ -71,7 +71,7 @@ export default class {
                     return "fa fa-play";
                 }
             } else {
-                return "fa-fa-play"
+                return "fa-fa-play";
             }
         };
 
