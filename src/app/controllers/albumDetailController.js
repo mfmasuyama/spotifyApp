@@ -63,7 +63,7 @@ export default class {
     };
 
     this.changePlayPauseButton = (track) => {
-        if(typeof this.audioObject !== "undefined") {
+        if(!!this.audioObject) {
             if(this.audioObject.src === track.preview_url && this.status === "playing") {
                 return "fa fa-pause";
             } else {
@@ -75,7 +75,7 @@ export default class {
     };
 
     this.stopTrack = () => {
-        if(typeof this.audioObject !== "undefined") {
+        if(!!this.audioObject) {
             this.audioObject.pause();
         }
     };
