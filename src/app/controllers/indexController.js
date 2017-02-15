@@ -1,13 +1,16 @@
 export default class {
+    
     constructor(
         $location,
         ApiService,
-        StarService) {
+        StarService
+    ) {
 
-    this.toResults = () => {
-        $location.path("/results/" + this.search);
-    };
+        this.toResults = () => {
+            $location.path("/results/" + this.search);
+        };
 
-    this.favourites = StarService.getFavourites();
+        this.favourites = StarService.getFavourites();
+
     }
 }

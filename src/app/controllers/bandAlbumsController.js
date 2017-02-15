@@ -3,33 +3,34 @@ export default class {
     constructor(
         $routeParams,
         $location,
-        ApiService) {
+        ApiService
+    ) {
 
-    ApiService.getAlbums($routeParams.bandId)
-    .then((response) => {
-        this.albums = response;
-    });
+        ApiService.getAlbums($routeParams.bandId)
+        .then((response) => {
+            this.albums = response;
+        });
 
-    ApiService.getArtist($routeParams.bandId)
-    .then((response) => {
-        this.artist = response;
-    });
+        ApiService.getArtist($routeParams.bandId)
+        .then((response) => {
+            this.artist = response;
+        });
 
-    this.toIndex = () => {
-        $location.path("/");
-    };
+        this.toIndex = () => {
+            $location.path("/");
+        };
 
-    this.toResults = () => {
-        $location.path("/results/" + this.search);
-    };
+        this.toResults = () => {
+            $location.path("/results/" + this.search);
+        };
 
-    this.toAlbumDetail = (albumId) => {
-        $location.path("/album-detail/" +  $routeParams.bandId + "/" + albumId);
-    };
+        this.toAlbumDetail = (albumId) => {
+            $location.path("/album-detail/" +  $routeParams.bandId + "/" + albumId);
+        };
 
-    this.backToResults = () => {
-        $location.path("/results/" + this.artist.name);
-    };
+        this.backToResults = () => {
+            $location.path("/results/" + this.artist.name);
+        };
 
     }
 }

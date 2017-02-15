@@ -4,101 +4,102 @@ export default class {
         $routeParams,
         $location,
         ApiService,
-        StarService) {
+        StarService
+    ) {
 
-    ApiService.getTracks($routeParams.albumId)
-    .then((response) => {
-        this.tracks = response;
-    });
+        ApiService.getTracks($routeParams.albumId)
+        .then((response) => {
+            this.tracks = response;
+        });
 
-    ApiService.getArtist($routeParams.bandId)
-    .then((response) => {
-        this.artist = response;
-    });
+        ApiService.getArtist($routeParams.bandId)
+        .then((response) => {
+            this.artist = response;
+        });
 
-    ApiService.getAlbum($routeParams.albumId)
-    .then((response) => {
-        this.album = response;
-    });
+        ApiService.getAlbum($routeParams.albumId)
+        .then((response) => {
+            this.album = response;
+        });
 
-    this.toIndex = () => {
-        $location.path("/");
-        this.stopTrack();
-    };
+        this.toIndex = () => {
+            $location.path("/");
+            this.stopTrack();
+        };
 
-    this.toResults = () => {
-        $location.path("/results/" + this.search);
-        this.stopTrack();
-    };
+        this.toResults = () => {
+            $location.path("/results/" + this.search);
+            this.stopTrack();
+        };
 
-    this.toBandAlbums = () => {
-        $location.path("/band-albums/" + this.artist.id);
-        this.stopTrack();
-    };
+        this.toBandAlbums = () => {
+            $location.path("/band-albums/" + this.artist.id);
+            this.stopTrack();
+        };
 
-    this.backToResults = () => {
-        $location.path("/results/" + this.artist.name);
-        this.stopTrack();
-    };
+        this.backToResults = () => {
+            $location.path("/results/" + this.artist.name);
+            this.stopTrack();
+        };
 
-    this.playTrack = (track) => {
-        if(typeof this.audioObject === "undefined") {
-            this.audioObject = new Audio(track.preview_url);
-            this.audioObject.play();
-            this.status = "playing";
-        } else if (this.audioObject.src === track.preview_url) {
-            if(this.status === "playing") {
-                this.audioObject.pause();
-                this.status = "paused";
+        this.playTrack = (track) => {
+            if(typeof this.audioObject === "undefined") {
+                this.audioObject = new Audio(track.preview_url);
+                this.audioObject.play();
+                this.status = "playing";
+            } else if (this.audioObject.src === track.preview_url) {
+                if(this.status === "playing") {
+                    this.audioObject.pause();
+                    this.status = "paused";
+                } else {
+                    this.audioObject.play();
+                    this.status = "playing";
+                }
             } else {
+                this.audioObject.pause();
+                this.audioObject = new Audio(track.preview_url);
                 this.audioObject.play();
                 this.status = "playing";
             }
-        } else {
-            this.audioObject.pause();
-            this.audioObject = new Audio(track.preview_url);
-            this.audioObject.play();
-            this.status = "playing";
-        }
-    };
+        };
 
-    this.changePlayPauseButton = (track) => {
-        if(!!this.audioObject) {
-            if(this.audioObject.src === track.preview_url && this.status === "playing") {
-                return "fa fa-pause";
+        this.changePlayPauseButton = (track) => {
+            if(!!this.audioObject) {
+                if(this.audioObject.src === track.preview_url && this.status === "playing") {
+                    return "fa fa-pause";
+                } else {
+                    return "fa fa-play";
+                }
             } else {
-                return "fa fa-play";
+                return "fa-fa-play"
             }
-        } else {
-            return "fa-fa-play"
+        };
+
+        this.stopTrack = () => {
+            if(!!this.audioObject) {
+                this.audioObject.pause();
+            }
+        };
+
+        this.changeStatus = (track, album) => {
+            StarService.click(track, album);
         }
-    };
 
-    this.stopTrack = () => {
-        if(!!this.audioObject) {
-            this.audioObject.pause();
+        this.changeClass = (track) => {
+            if(StarService.isFavourite(track)) {
+                return "yellow";
+            } else {
+                return "grey";
+            }
+        };
+
+        this.orderUp = () => {
+            this.tracks = ApiService.orderUp(this.tracks);
         }
-    };
 
-    this.changeStatus = (track, album) => {
-        StarService.click(track, album);
-    }
-
-    this.changeClass = (track) => {
-        if(StarService.isFavourite(track)) {
-            return "yellow";
-        } else {
-            return "grey";
+        this.orderDown = () => {
+            this.tracks = ApiService.orderDown(this.tracks);
         }
-    };
-
-    this.orderUp = () => {
-        this.tracks = ApiService.orderUp(this.tracks);
-    }
-
-    this.orderDown = () => {
-        this.tracks = ApiService.orderDown(this.tracks);
-    }
 
     }
 }
