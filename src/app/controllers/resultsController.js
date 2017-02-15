@@ -1,18 +1,14 @@
 export default class {
 
     constructor(
-        $scope,
         $routeParams,
         $location,
         ApiService
     ) {
 
-    // this.artists = [];
-
-    this.getArtists = function() {
-        ApiService.getArtists($scope.resCtrl.search)
+    this.getArtists = () => {
+        ApiService.getArtists(this.search)
         .then((response) => {
-            console.log(response);
             this.artists = response;
         });
     }
@@ -22,12 +18,11 @@ export default class {
         this.artists = response;
     });
 
-    this.toIndex = function() {
-        console.log("entro a toIndex");
+    this.toIndex = () => {
         $location.path("/");
     };
 
-    this.toBandAlbums = function(albumId) {
+    this.toBandAlbums = (albumId) => {
         $location.path("/band-albums/" + albumId);
     };
 

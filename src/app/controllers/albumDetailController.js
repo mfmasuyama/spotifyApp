@@ -1,5 +1,10 @@
-export function albumDetailController($scope, $routeParams, $location, ApiService, StarService) {
-    $scope.albumDetailCtrl = this;
+export default class {
+
+    constructor(
+        $routeParams,
+        $location,
+        ApiService,
+        StarService) {
 
     ApiService.getTracks($routeParams.albumId)
     .then((response) => {
@@ -14,7 +19,6 @@ export function albumDetailController($scope, $routeParams, $location, ApiServic
     ApiService.getAlbum($routeParams.albumId)
     .then((response) => {
         this.album = response;
-        console.log(response);
     });
 
     this.toIndex = () => {
@@ -90,5 +94,7 @@ export function albumDetailController($scope, $routeParams, $location, ApiServic
 
     this.orderDown = () => {
         this.tracks = ApiService.orderDown(this.tracks);
+    }
+
     }
 }

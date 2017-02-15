@@ -1,8 +1,8 @@
 import 'angular-route';
-import {indexController} from "./controllers/indexController";
+import indexController from "./controllers/indexController";
 import resultsController from "./controllers/resultsController";
-import {bandAlbumsController} from "./controllers/bandAlbumsController";
-import {albumDetailController} from "./controllers/albumDetailController";
+import bandAlbumsController from "./controllers/bandAlbumsController";
+import albumDetailController from "./controllers/albumDetailController";
 
 export function routes($routeProvider, $locationProvider) {
     $locationProvider.html5Mode({

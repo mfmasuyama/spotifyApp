@@ -1,5 +1,9 @@
-export function bandAlbumsController($scope, $routeParams, $location, ApiService) {
-    $scope.bandAlbumsCtrl = this;
+export default class {
+
+    constructor(
+        $routeParams,
+        $location,
+        ApiService) {
 
     ApiService.getAlbums($routeParams.bandId)
     .then((response) => {
@@ -26,4 +30,6 @@ export function bandAlbumsController($scope, $routeParams, $location, ApiService
     this.backToResults = () => {
         $location.path("/results/" + this.artist.name);
     };
+
+    }
 }

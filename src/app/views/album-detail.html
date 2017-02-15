@@ -1,25 +1,25 @@
 <div>
     <nav class="nav">
-        <img src="/app/images/spotify-icon.png" alt="Home" class="logo-left" ng-click=albumDetailCtrl.toIndex()>
+        <img src="/app/images/spotify-icon.png" alt="Home" class="logo-left" ng-click=albCtrl.toIndex()>
         <div class="column-search">
-            <input type="text" class="search-input" placeholder="Search for another artist" ng-model="albumDetailCtrl.search">
-            <i class="fa fa-search" aria-hidden="true" id="search-icon" ng-click="albumDetailCtrl.toResults()"></i>
+            <input type="text" class="search-input" placeholder="Search for another artist" ng-model="albCtrl.search">
+            <i class="fa fa-search" aria-hidden="true" id="search-icon" ng-click="albCtrl.toResults()"></i>
         </div>
     </nav>
     <div class="row">
         <div class="inside-container">
-            <img src="{{albumDetailCtrl.album.images[0].url}}" alt="{{albumDetailCtrl.album.name}}" class="img-title">
-            <h1 class="title">{{albumDetailCtrl.album.name}}</h1>
-            <h3 class="artist-year">{{albumDetailCtrl.artist.name}} - {{albumDetailCtrl.album.release_date | limitTo:4}}</h3>
+            <img src="{{albCtrl.album.images[0].url}}" alt="{{albCtrl.album.name}}" class="img-title">
+            <h1 class="title">{{albCtrl.album.name}}</h1>
+            <h3 class="artist-year">{{albCtrl.artist.name}} - {{albCtrl.album.release_date | limitTo:4}}</h3>
             <p class="links">
-                <a ng-click=albumDetailCtrl.toIndex()>HOME</a> > <a ng-click="albumDetailCtrl.backToResults()">ARTISTS</a> > <a ng-click="albumDetailCtrl.toBandAlbums()">{{albumDetailCtrl.artist.name}}</a> > {{albumDetailCtrl.album.name}}
+                <a ng-click=albCtrl.toIndex()>HOME</a> > <a ng-click="albCtrl.backToResults()">ARTISTS</a> > <a ng-click="albCtrl.toBandAlbums()">{{albCtrl.artist.name}}</a> > {{albCtrl.album.name}}
             </p>
         </div>
     </div>
     <div class="row">
         <div class="inside-container">
-            <button class="order-by-duration-up" ng-click="albumDetailCtrl.orderUp()">Order by duration <i class="fa fa-arrow-up" aria-hidden="true"></i></button>
-            <button class="order-by-duration-down" ng-click="albumDetailCtrl.orderDown()">Order by duration <i class="fa fa-arrow-down" aria-hidden="true"></i></button>
+            <button class="order-by-duration-up" ng-click="albCtrl.orderUp()">Order by duration <i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+            <button class="order-by-duration-down" ng-click="albCtrl.orderDown()">Order by duration <i class="fa fa-arrow-down" aria-hidden="true"></i></button>
         </div>
     </div>
     <div class="inside-container">
@@ -31,15 +31,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="item in albumDetailCtrl.tracks">
+                    <tr ng-repeat="item in albCtrl.tracks">
                         <td>
-                            <i class="fa fa-play" aria-hidden="true" ng-click="albumDetailCtrl.playTrack(item)" ng-class="albumDetailCtrl.changePlayPauseButton(item)"></i>
+                            <i class="fa fa-play" aria-hidden="true" ng-click="albCtrl.playTrack(item)" ng-class="albCtrl.changePlayPauseButton(item)"></i>
                         </td>
                         <td>
                             {{item.name}}
                         </td>
                         <td>
-                            <i class="fa fa-star" aria-hidden="true" ng-click="albumDetailCtrl.changeStatus(item, albumDetailCtrl.album)" ng-class="albumDetailCtrl.changeClass(item)"></i>
+                            <i class="fa fa-star" aria-hidden="true" ng-click="albCtrl.changeStatus(item, albCtrl.album)" ng-class="albCtrl.changeClass(item)"></i>
                         </td>
                     </tr>
                 </tbody>
