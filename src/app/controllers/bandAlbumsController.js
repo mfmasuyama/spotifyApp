@@ -6,6 +6,9 @@ export default class {
         ApiService
     ) {
 
+        this.location = $location;
+        this.routeParams = $routeParams;
+
         ApiService.getAlbums($routeParams.bandId)
         .then((response) => {
             this.albums = response;
@@ -16,21 +19,21 @@ export default class {
             this.artist = response;
         });
 
-        this.toIndex = () => {
-            $location.path("/");
-        };
-
-        this.toResults = () => {
-            $location.path("/results/" + this.search);
-        };
-
-        this.toAlbumDetail = (albumId) => {
-            $location.path("/album-detail/" +  $routeParams.bandId + "/" + albumId);
-        };
-
-        this.backToResults = () => {
-            $location.path("/results/" + this.artist.name);
-        };
-
     }
+
+    toIndex = () => {
+        this.location.path("/");
+    };
+
+    toResults = () => {
+        this.location.path("/results/" + this.search);
+    };
+
+    toAlbumDetail = (albumId) => {
+        this.location.path("/album-detail/" +  this.routeParams.bandId + "/" + albumId);
+    };
+
+    backToResults = () => {
+        this.location.path("/results/" + this.artist.name);
+    };
 }

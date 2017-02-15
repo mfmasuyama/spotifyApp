@@ -7,6 +7,10 @@ export default class {
         StarService
     ) {
 
+        this.location = $location;
+        this.ApiService = ApiService;
+        this.StarService = StarService;
+
         ApiService.getTracks($routeParams.albumId)
         .then((response) => {
             this.tracks = response;
@@ -22,27 +26,29 @@ export default class {
             this.album = response;
         });
 
-        this.toIndex = () => {
-            $location.path("/");
+    }
+
+        toIndex = () => {
+            this.location.path("/");
             this.stopTrack();
         };
 
-        this.toResults = () => {
-            $location.path("/results/" + this.search);
+        toResults = () => {
+            this.location.path("/results/" + this.search);
             this.stopTrack();
         };
 
-        this.toBandAlbums = () => {
-            $location.path("/band-albums/" + this.artist.id);
+        toBandAlbums = () => {
+            this.location.path("/band-albums/" + this.artist.id);
             this.stopTrack();
         };
 
-        this.backToResults = () => {
-            $location.path("/results/" + this.artist.name);
+        backToResults = () => {
+            this.location.path("/results/" + this.artist.name);
             this.stopTrack();
         };
 
-        this.playTrack = (track) => {
+        playTrack = (track) => {
             if(typeof this.audioObject === "undefined") {
                 this.audioObject = new Audio(track.preview_url);
                 this.audioObject.play();
@@ -63,7 +69,7 @@ export default class {
             }
         };
 
-        this.changePlayPauseButton = (track) => {
+        changePlayPauseButton = (track) => {
             if(!!this.audioObject) {
                 if(this.audioObject.src === track.preview_url && this.status === "playing") {
                     return "fa fa-pause";
@@ -75,31 +81,29 @@ export default class {
             }
         };
 
-        this.stopTrack = () => {
+        stopTrack = () => {
             if(!!this.audioObject) {
                 this.audioObject.pause();
             }
         };
 
-        this.changeStatus = (track, album) => {
-            StarService.click(track, album);
+        changeStatus = (track, album) => {
+            this.StarService.click(track, album);
         }
 
-        this.changeClass = (track) => {
-            if(StarService.isFavourite(track)) {
+        changeClass = (track) => {
+            if(this.StarService.isFavourite(track)) {
                 return "yellow";
             } else {
                 return "grey";
             }
         };
 
-        this.orderUp = () => {
-            this.tracks = ApiService.orderUp(this.tracks);
+        orderUp = () => {
+            this.tracks = this.ApiService.orderUp(this.tracks);
         }
 
-        this.orderDown = () => {
-            this.tracks = ApiService.orderDown(this.tracks);
+        orderDown = () => {
+            this.tracks = this.ApiService.orderDown(this.tracks);
         }
-
-    }
 }

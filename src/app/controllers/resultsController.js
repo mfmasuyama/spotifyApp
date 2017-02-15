@@ -6,25 +6,28 @@ export default class {
         ApiService
     ) {
 
-        this.getArtists = () => {
-            ApiService.getArtists(this.search)
-            .then((response) => {
-                this.artists = response;
-            });
-        }
+        this.location = $location;
+        this.ApiService = ApiService;
 
         ApiService.getArtists($routeParams.search)
         .then((response) => {
             this.artists = response;
         });
 
-        this.toIndex = () => {
-            $location.path("/");
-        };
-
-        this.toBandAlbums = (albumId) => {
-            $location.path("/band-albums/" + albumId);
-        };
-
     }
+
+    getArtists = () => {
+        this.ApiService.getArtists(this.search)
+        .then((response) => {
+            this.artists = response;
+        });
+    }
+
+    toIndex = () => {
+        this.location.path("/");
+    };
+
+    toBandAlbums = (albumId) => {
+        this.location.path("/band-albums/" + albumId);
+    };
 }
