@@ -21,19 +21,19 @@ export default class {
 
     }
 
-    toIndex = () => {
+    toIndex() {
         this.location.path("/");
     };
 
-    toResults = () => {
+    toResults() {
         this.location.path("/results/" + this.search);
     };
 
-    toAlbumDetail = (albumId) => {
+    toAlbumDetail(albumId) {
         this.location.path("/album-detail/" +  this.routeParams.bandId + "/" + albumId);
     };
 
-    backToResults = () => {
+    backToResults() {
         this.location.path("/results/" + this.artist.name);
     };
 }

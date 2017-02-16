@@ -11,7 +11,7 @@ export default class {
 
     }
 
-    toResults = () => {
+    toResults() {
         this.location.path("/results/" + this.search);
     };
 }

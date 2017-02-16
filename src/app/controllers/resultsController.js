@@ -16,18 +16,18 @@ export default class {
 
     }
 
-    getArtists = () => {
+    getArtists() {
         this.ApiService.getArtists(this.search)
         .then((response) => {
             this.artists = response;
         });
     }
 
-    toIndex = () => {
+    toIndex() {
         this.location.path("/");
     };
 
-    toBandAlbums = (albumId) => {
+    toBandAlbums(albumId) {
         this.location.path("/band-albums/" + albumId);
     };
 }

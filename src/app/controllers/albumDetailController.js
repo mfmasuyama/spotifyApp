@@ -28,27 +28,27 @@ export default class {
 
     }
 
-        toIndex = () => {
+        toIndex() {
             this.location.path("/");
             this.stopTrack();
         };
 
-        toResults = () => {
+        toResults() {
             this.location.path("/results/" + this.search);
             this.stopTrack();
         };
 
-        toBandAlbums = () => {
+        toBandAlbums() {
             this.location.path("/band-albums/" + this.artist.id);
             this.stopTrack();
         };
 
-        backToResults = () => {
+        backToResults() {
             this.location.path("/results/" + this.artist.name);
             this.stopTrack();
         };
 
-        playTrack = (track) => {
+        playTrack(track) {
             if(typeof this.audioObject === "undefined") {
                 this.audioObject = new Audio(track.preview_url);
                 this.audioObject.play();
@@ -69,7 +69,7 @@ export default class {
             }
         };
 
-        changePlayPauseButton = (track) => {
+        changePlayPauseButton(track) {
             if(!!this.audioObject) {
                 if(this.audioObject.src === track.preview_url && this.status === "playing") {
                     return "fa fa-pause";
@@ -81,17 +81,17 @@ export default class {
             }
         };
 
-        stopTrack = () => {
+        stopTrack() {
             if(!!this.audioObject) {
                 this.audioObject.pause();
             }
         };
 
-        changeStatus = (track, album) => {
+        changeStatus(track, album) {
             this.StarService.click(track, album);
         }
 
-        changeClass = (track) => {
+        changeClass(track) {
             if(this.StarService.isFavourite(track)) {
                 return "yellow";
             } else {
@@ -99,11 +99,11 @@ export default class {
             }
         };
 
-        orderUp = () => {
+        orderUp() {
             this.tracks = this.ApiService.orderUp(this.tracks);
         }
 
-        orderDown = () => {
+        orderDown() {
             this.tracks = this.ApiService.orderDown(this.tracks);
         }
 }
