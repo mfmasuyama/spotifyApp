@@ -1,9 +1,26 @@
-<div class="consigna__container">
-  <h2>LA PRIMERA PAGINA DEBE MOSTRAS UN BUSCADOR Y COMO SOMOS BUENOS, YA LES DEJAMOS EL INPUT</h2>
-  <input type="text"/>
-  <button>Buscar</button>
-  <h3>FAVORITOS</h3>
-  <img src="https://i.scdn.co/image/66302ca80395b6be3600d5f0ef69db9e0c43f4f5" alt="">
-  <img src="https://i.scdn.co/image/e2b11f82ba8d5aecc6486fe28225db43a003caa1" alt="">
-  <img src="https://i.scdn.co/image/3a299e917835b053f53441280262f10829bd1c8e" alt="">
+<div class="container">
+    <nav class="nav">
+        <img src="/app/images/spotify-icon.png" alt="Home" class="logo-center">
+    </nav>
+    <div class="inside-container">
+        <div class="row">
+            <h4>Welcome to</h4>
+            <h1 class="title">Spotisearch</h1>
+            <p>Search your favourite songs over Spotify, just enter an artist's name in the following search box and enjoy!</p>
+        </div>
+        <div class="row">
+            <input type="text" class="search-input" placeholder="Type the name of your favourite artist" ng-model="indCtrl.search">
+            <i class="fa fa-search" aria-hidden="true" id="search-icon" ng-click="indCtrl.toResults()"></i>
+        </div>
+        <div class="row" ng-if="indCtrl.favourites.length > 0">
+            <h2>Favourite songs</h2>
+            <div class="item-song" ng-repeat="item in indCtrl.favourites">
+                <img ng-src="{{item.album.images[0].url}}" alt="{{item.album.name}}">
+                <p class="song">{{item.track.name}}</p>
+                <p class="artist">Artists: {{item.track.artists[0].name}}</p>
+                <p class="album">Album: {{item.album.name}}</p>
+            </div>
+        </div>
+    </div>
+    <footer class="footer"></footer>
 </div>

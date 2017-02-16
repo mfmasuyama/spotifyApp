@@ -3,26 +3,44 @@
   "version": "0.0.1",
   "scripts": {
     "test": "gulp test",
-    "start": "./node_modules/.bin/webpack-dev-server",
+    "start": "webpack-dev-server",
     "prebuild": "mkdir tmp; cp -R ./src ./tmp",
-    "build": "./node_modules/.bin/webpack",
+    "build": "webpack",
     "dev": "npm start -- --watch",
     "mock": "node server-mock.js"
   },
   "dependencies": {
     "angular": "^1.5.6",
     "angular-route": "^1.5.7",
-    "core-js": "^2.4.0"
+    "core-js": "^2.4.0",
+    "ngstorage": "^0.3.11"
   },
   "devDependencies": {
     "babel-cli": "^6.7.7",
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-class-properties": "^6.9.1",
     "babel-preset-es2015": "^6.9.0",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.4.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-spec-reporter": "0.0.26",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   },
   "engines": {
     "node": ">=4.0.0"
-  }
+  },
+  "description": "* [node](https://nodejs.org/en/) > 4\r * npm > 3",
+  "main": "webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mfmasuyama/spotifyApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mfmasuyama/spotifyApp/issues"
+  },
+  "homepage": "https://github.com/mfmasuyama/spotifyApp#readme"
 }

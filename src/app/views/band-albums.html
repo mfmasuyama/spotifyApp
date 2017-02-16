@@ -1,5 +1,28 @@
 <div class="band-detail-container">
-    <img src="https://i.scdn.co/image/66302ca80395b6be3600d5f0ef69db9e0c43f4f5" alt="">
-    <img src="https://i.scdn.co/image/e2b11f82ba8d5aecc6486fe28225db43a003caa1" alt="">
-    <img src="https://i.scdn.co/image/3a299e917835b053f53441280262f10829bd1c8e" alt="">
+    <nav class="nav">
+        <img src="/app/images/spotify-icon.png" alt="Home" class="logo-left" ng-click=bandCtrl.toIndex()>
+        <div class="column-search">
+            <input type="text" class="search-input" placeholder="Search for another artist" ng-model="bandCtrl.search">
+            <i class="fa fa-search" aria-hidden="true" id="search-icon" ng-click="bandCtrl.toResults()"></i>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="inside-container">
+            <img src="{{bandCtrl.artist.images[0].url}}" alt="{{bandCtrl.artist.name}}" class="img-title">
+            <h1 class="title">{{bandCtrl.artist.name}}</h1>
+            <h3 class="genre">{{bandCtrl.artist.genres.join(", ")}}</h3>
+            <p class="links">
+                <a ng-click="bandCtrl.toIndex()">HOME</a> > <a ng-click="bandCtrl.backToResults()">ARTISTS</a> > {{bandCtrl.artist.name}}
+            </p>
+        </div>
+    </div>
+    <div class="inside-container">
+        <div class="row">
+            <div class="item-album" ng-repeat="item in bandCtrl.albums" ng-click="bandCtrl.toAlbumDetail(item.id)">
+                <img src={{item.images[0].url}} alt="{{item.name}}">
+                <p class="album">{{item.name}}</p>
+            </div>
+        </div>
+    </div>
+    <footer class="footer"></footer>
 </div>

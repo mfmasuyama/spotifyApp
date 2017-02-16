@@ -1,10 +1,27 @@
-<div class="consigna__container">
-  <h2>ACA TIENEN QUE CARGAR UNA GRILLA CON LOS ARTISTAS QUE APARECIERON COMO RESULTADO DE LA BUSQUEDA ANTERIOR</h2>
-  <img src="https://i.scdn.co/image/445ffa41207f321883fb01f406165801c7f41ef0" alt="">
-  <h4>Cyndi Lauper</h4>
-  <img src="https://i.scdn.co/image/6b86adfb6637e08f76390266b617120e95ad16c0" alt="">
-  <h4>Cindy Bradley</h4>
-  <img src="https://i.scdn.co/image/82633230315fb6b7cc7f4b573bc9e8edf0da69da" alt="">
-  <h4>Cindy Bullens</h4>
-  
+<div>
+    <nav class="nav">
+        <img src="/app/images/spotify-icon.png" alt="Home" class="logo-center" ng-click="resCtrl.toIndex()">
+    </nav>
+    <div class="inside-container">
+        <div class="row">
+            <h1 class="title">Artists</h1>
+            <p ng-show="resCtrl.search">You are currently searching: {{resCtrl.search}}</p>
+        </div>
+        <div class="row">
+            <input type="text" class="search-input" placeholder="Type the name of your favourite artist" ng-model="resCtrl.search">
+            <i class="fa fa-search" aria-hidden="true" id="search-icon" ng-click="resCtrl.getArtists()"></i>
+        </div>
+        <div class="row">
+            <p class="links">
+                <a ng-click="resCtrl.toIndex()">HOME</a> > ARTISTS
+            </p>
+        </div>
+        <div class="row">
+            <div class="item-artist" ng-repeat="item in resCtrl.artists" ng-click="resCtrl.toBandAlbums(item.id)">
+                <img src={{item.images[0].url}} alt="{{item.name}}">
+                <p class="artist">{{item.name}}</p>
+            </div>
+        </div>
+    </div>
+    <footer class="footer"></footer>
 </div>

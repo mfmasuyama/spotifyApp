@@ -1,5 +1,257 @@
-.consigna__container {
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(255, 255, 255);
 }
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: 18%;
+  background-image: url("/app/images/romantic-rose-vector-pattern-237709.jpg");
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.inside-container {
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+}
+
+.row {
+    width: 100%;
+}
+
+a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+p.links a:hover, #search-icon:hover {
+    text-shadow: 1px 1px 2px rgb(249, 163, 210), 0 0 25px rgb(249, 163, 210), 0 0 5px rgb(249, 163, 210);
+    cursor: pointer;
+}
+
+i {
+    cursor: pointer;
+}
+
+/* Nav */
+.nav {
+    width: 100%;
+    background-color: rgb(249, 163, 210);
+    border-bottom: 1px solid rgb(255, 255, 255);
+    overflow: hidden;
+}
+/*---------*/
+
+/* Logo */
+img[class^="logo"] {
+    height: 50px;
+    width: 50px;
+    margin: 20px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+/*--------*/
+
+/* Nav with logo-center */
+img.logo-center  {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*--------*/
+
+/* Nav with logo-left */
+img.logo-left {
+    float: left;
+}
+/*--------*/
+
+/* Title */
+.title {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.img-title {
+    float: left;
+    margin: 20px;
+    width: 120px;
+    height: 120px;
+}
+/*--------*/
+
+/* Items: Favourite Song - Artist */
+div[class^="item"] {
+    width: 49%;
+    background-color: rgba(249, 163, 210, 0.6);
+    border: 1px solid rgb(255, 255, 255);
+    box-sizing: border-box;
+    margin-top: 1%;
+    line-height: 17px;
+    cursor: pointer;
+    float: left;
+    margin-right: 0.5%;
+    margin-left: 0.5%;
+}
+
+div[class^="item"] p:first-of-type {
+    font-weight: bold;
+}
+
+div[class^="item"] img {
+    width: 75px;
+    height: 75px;
+    margin: 10px;
+    float: left;
+}
+
+div[class^="item"]:hover {
+    background-color: rgba(249, 163, 210, 0.8);
+}
+/*--------*/
+
+/* Search */
+.search-input {
+    height:25px;
+    text-indent: 30px;
+    border-radius: 8px;
+    width: 100%;
+    line-height: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+}
+
+#search-icon {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+    bottom: 43px;
+    background-color: transparent;
+}
+
+input:focus {
+    outline: none;
+    border-color: rgb(249, 163, 210);
+    box-shadow: 0 0 10px rgb(249, 163, 210);
+}
+/*--------*/
+
+/* Search in column */
+.column-search {
+    width: 40%;
+    float: right;
+    margin-right: 10px;
+}
+/*--------*/
+
+.footer {
+    width: 100%;
+    height: 20px;
+    background-color: rgb(212, 103, 182);
+    border-top: 1px solid rgb(255, 255, 255);
+}
+
+/* Links */
+.links {
+    clear: both;
+}
+/*--------*/
+
+/* Table */
+table {
+	table-layout: auto;
+	background-color: rgba(249, 163, 210, 0.6);
+	border: 1px solid rgb(255, 255, 255);
+	width: 100%;
+	padding: 5px;
+    text-indent: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+thead {
+	background-color: rgb(249, 163, 210);
+    text-align: left;
+}
+
+tr {
+    width: 100%;
+    line-height: 30px;
+}
+
+tr td {
+	background-color: rgba(249, 163, 210, 0.4);
+}
+
+tr td:first-child {
+    width: 6%;
+    text-align: center;
+    text-indent: 0px;
+}
+
+tr td:nth-child(3) {
+    width: 6%;
+    text-align: center;
+    text-indent: 0px;
+}
+
+.grey {
+    color: rgb(128, 128, 128);
+}
+
+.yellow {
+    color: rgb(255, 255, 102);
+}
+
+i[class$="play"]:hover, i[class$="pause"]:hover {
+    color: rgb(176, 250, 215);
+}
+
+button[class^="order"] {
+    float: right;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    border: 1px solid rgb(255,255,255);
+    cursor: pointer;
+    background-color: rgb(249, 163, 210);
+}
+
+button[class^="order"]:hover {
+    background-color: rgb(176, 250, 215);
+}
+/*--------*/
+
+/* Responsive */
+@media only screen and (max-width: 645px) {
+    .inside-container {
+        width: 98%;
+    }
+    [class^="item"] {
+        width: 100% !important;
+    }
+    .column-search .search-input { /* FIX */
+        display: none;
+    }
+    .column-search #search-icon { /* FIX */
+        display: block;
+        float: right;
+        width: 40px;
+        height: 40px;
+        margin: 20px;
+        bottom: 0px;
+        vertical-align: middle;
+    }
+    [class^=logo] { /* FIX */
+        display: block;
+        margin-left: 100px;
+        margin-right: 20px;
+        float: none;
+    }
+}
+/*--------*/
